@@ -1,13 +1,16 @@
 import java.util.Scanner;
 
 public class ConsoleApp {
-    public static void Main() {
+    public static void main(String[] args) {
         MessageHandler chat = new MessageHandler();
-        chat.GetStartMessage();
+        Scanner in = new Scanner(System.in);
+        String message;
+
+        System.out.println(chat.GetStartMessage());
+
         while (true){
-            Scanner in = new Scanner(System.in);
-            String message = in.next();
-            chat.HandleMessage(message);
+            message = in.next();
+            System.out.println(chat.HandleMessage(message));
         }
     }
 }
