@@ -8,8 +8,9 @@ public class SimplestGameMod implements IGameMode {
 
     @Override
     public String GetQuestion() {
-        quest = generator.GenerateQuestion();
-        return quest.toString();
+        //quest = generator.GenerateQuestion();
+        //return quest.toString();
+        return new Question().ShowQuestion();
     }
 
     @Override
