@@ -11,7 +11,7 @@ public class SimplestQuestionsGenerator implements IQuestionsGenerator {
         for (int i = 0; i < 4; i++){
             answers[i] = String.valueOf(rnd.nextInt(100));
         }
-        int index = rnd.nextInt(4);
+        int index = rnd.nextInt(3);
         String question = "Угадай моё чиселко";
         return  new Question(question, answers, index);
     }
