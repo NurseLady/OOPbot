@@ -1,6 +1,6 @@
 package interfaces;
 
 public interface IQuestionsGenerator {
-    Qestion GenerateQuestion();
+    Question GenerateQuestion();
     //TODO: 1.Создать класс Question, 2.Реализовать интерфейс в классе SimplestQuestionsGenerator
 }
