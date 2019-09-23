@@ -1,3 +1,5 @@
+package bot;
+
 import interfaces.IQuestionsGenerator;
 import java.util.*;
 import java.io.*;

@@ -1,3 +1,5 @@
+package bot;
+
 import interfaces.IGameMode;
 
 public class MessageHandler {
