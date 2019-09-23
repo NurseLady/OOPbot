@@ -10,15 +10,14 @@ public class SimplestGameMod implements IGameMode {
 
     @Override
     public String GetQuestion() {
-        //quest = generator.GenerateQuestion();
-        //return quest.toString();
-        return new Question().ShowQuestion();
+        quest = generator.GenerateQuestion();
+        return quest.toString();
     }
 
     @Override
     public String CheckUserAnswer(String message) {
 
-        if (message == quest.GetCorrectAnswerNumber().toString()){
+        if (message.compareTo(String.valueOf(quest.index + 1)) == 1){
             return "И это правильный ответ! " + this.Skip();
         }
         return "Не верно, попробуй ещё разок!";
