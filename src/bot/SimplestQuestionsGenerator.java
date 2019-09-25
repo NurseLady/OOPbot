@@ -1,18 +1,18 @@
 package bot;
 
-import interfaces.IQuestionsGenerator;
+import interfaces.QuestionsGenerator;
 import java.util.*;
-import java.io.*;
 
-public class SimplestQuestionsGenerator implements IQuestionsGenerator {
-    public Question GenerateQuestion(){
+public class SimplestQuestionsGenerator implements QuestionsGenerator {
+    private final String question = "Угадай моё чиселко";
+
+    public Question generateQuestion(){
         Random rnd = new Random();
         String[] answers = new String[4];
         for (int i = 0; i < 4; i++){
             answers[i] = String.valueOf(rnd.nextInt(100));
         }
         int index = rnd.nextInt(3);
-        String question = "Угадай моё чиселко";
         return  new Question(question, answers, index);
     }
 }

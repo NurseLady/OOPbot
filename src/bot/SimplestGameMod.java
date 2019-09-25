@@ -1,23 +1,23 @@
 package bot;
 
-import interfaces.IGameMode;
-import interfaces.IQuestionsGenerator;
+import interfaces.GameMode;
+import interfaces.QuestionsGenerator;
 
-public class SimplestGameMod implements IGameMode {
-    private IQuestionsGenerator generator = new SimplestQuestionsGenerator();
+public class SimplestGameMod implements GameMode {
+    private QuestionsGenerator generator = new SimplestQuestionsGenerator();
     private Question quest;
 
 
     @Override
-    public String GetQuestion() {
-        quest = generator.GenerateQuestion();
+    public String getQuestion() {
+        quest = generator.generateQuestion();
         return quest.toString();
     }
 
     @Override
-    public String CheckUserAnswer(String message) {
+    public String checkUserAnswer(String message) {
 
-        if (message.compareTo(String.valueOf(quest.index + 1)) == 1){
+        if (message.compareTo(String.valueOf(quest.correctAnswerIndex + 1)) == 1){
             return "И это правильный ответ! " + this.Skip();
         }
         return "Не верно, попробуй ещё разок!";
@@ -25,6 +25,6 @@ public class SimplestGameMod implements IGameMode {
 
     @Override
     public String Skip() {
-        return "Хорошо, держи следующий вопрос: \n\n" + this.GetQuestion();
+        return "Хорошо, держи следующий вопрос: \n\n" + this.getQuestion();
     }
 }

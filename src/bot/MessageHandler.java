@@ -1,43 +1,51 @@
 package bot;
 
-import interfaces.IGameMode;
+import interfaces.GameMode;
 
-public class MessageHandler {
-    private IGameMode game;
+class MessageHandler {
+    private GameMode game;
+    String startMessage = "Привет! Я бот, с которым можно поиграть. Начать игру? (y/n)";
+    private String gameStartMessage = "Игра началась!\n" +
+            "Если вопрос слишком сложный, отправь \"n\" и я его пропущу.\n" +
+            "Когда игра надоест, отправь \"f\" и она закончится.\n\n";
+    private String gameEndMessage = "Игра окончена. Хочешь поиграть ещё? (y/n)";
+    private String noGameMessage = "Отправь \"y\" если передумаешь.";
+    private String incorrectInputMessage = "Я таких слов не знаю!";
 
-    public String GetStartMessage(){
-        return "Привет! Я бот, с которым можно поиграть. Начать игру? (y/n)";
-    }
-
-    public String HandleMessage(String message){
+    String handleMessage(String message){
         message = message.toLowerCase().replaceAll(System.getProperty("line.separator"), " ").trim();
+        String result;
         
         if (game != null){
             switch (message){
                 case "s":
-                    return "Игра началась!\n" +
-                            "Если вопрос слишком сложный, отправь \"n\" и я его пропущу.\n" +
-                            "Когда игра надоест, отправь \"f\" и она закончится.\n\n" + game.GetQuestion();
+                    result = gameStartMessage + game.getQuestion();
+                    break;
                 case "f":
                     game = null;
-                    return "Игра окончена. Хочешь поиграть ещё? (y/n)";
+                    result = gameEndMessage;
+                    break;
                 case "n":
-                    return game.Skip();
+                    result = game.Skip();
+                    break;
                 default:
-                    return game.CheckUserAnswer(message);
+                    result = game.checkUserAnswer(message);
+                    break;
+            }
+        } else {
+            switch (message) {
+                case "n":
+                    result = noGameMessage;
+                    break;
+                case "y":
+                    game = new SimplestGameMod();
+                    result = this.handleMessage("s");
+                    break;
+                default:
+                    result = incorrectInputMessage;
+                    break;
             }
         }
-
-        switch (message){
-            case "n":
-                return "Ок, если передумаешь напиши \"y\".";
-
-            case "y":
-                game = new SimplestGameMod();
-                return this.HandleMessage("s");
-
-            default:
-                return "Я таких слов не знаю!";
-        }
+        return result;
     }
 }
