@@ -5,7 +5,7 @@ public class Question {
     private String[] answers;
     int correctAnswerIndex;
 
-    Question(String question, String[] answers, int correctAnswerIndex){
+    public Question(String question, String[] answers, int correctAnswerIndex){
         this.question = question;
         this.answers = answers;
         this.correctAnswerIndex = correctAnswerIndex;
@@ -15,7 +15,7 @@ public class Question {
     public String toString(){
         StringBuilder result = new StringBuilder(question + "\n\n");
 
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < answers.length; i++)
             result.append(i + 1).append(". ").append(answers[i]).append("\n");
 
         return result.toString();
