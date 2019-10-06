@@ -20,7 +20,7 @@ public class SimplestGameMod implements GameMode {
     @Override
     public String checkUserAnswer(String message) {
 
-        if (message.compareTo(String.valueOf(quest.correctAnswerIndex + 1)) > 0){
+        if (Integer.parseInt(message) == quest.correctAnswerIndex + 1){
             return correctAnswerMessage + this.Skip();
         }
         return uncorrectAnswerMessage;
