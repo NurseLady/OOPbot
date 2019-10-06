@@ -6,6 +6,9 @@ import interfaces.QuestionsGenerator;
 public class SimplestGameMod implements GameMode {
     private QuestionsGenerator generator = new SimplestQuestionsGenerator();
     private Question quest;
+    private String skipMessage = "Хорошо, держи следующий вопрос: \n\n";
+    private String correctAnswerMessage = "И это правильный ответ! ";
+    private String uncorrectAnswerMessage = "Не верно, попробуй ещё разок!";
 
 
     @Override
@@ -17,14 +20,14 @@ public class SimplestGameMod implements GameMode {
     @Override
     public String checkUserAnswer(String message) {
 
-        if (message.compareTo(String.valueOf(quest.correctAnswerIndex + 1)) == 1){
-            return "И это правильный ответ! " + this.Skip();
+        if (message.compareTo(String.valueOf(quest.correctAnswerIndex + 1)) > 0){
+            return correctAnswerMessage + this.Skip();
         }
-        return "Не верно, попробуй ещё разок!";
+        return uncorrectAnswerMessage;
     }
 
     @Override
     public String Skip() {
-        return "Хорошо, держи следующий вопрос: \n\n" + this.getQuestion();
+        return skipMessage + this.getQuestion();
     }
 }
