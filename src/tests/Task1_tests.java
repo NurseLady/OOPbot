@@ -2,17 +2,28 @@ package tests;
 
 import bot.MessageHandler;
 import bot.Question;
+import bot.SimplestGameMod;
+import interfaces.QuestionsGenerator;
 import org.junit.*;
 
 import static org.junit.Assert.*;
 
 public class Task1_tests {
+    private class TestQuestionGenerator implements QuestionsGenerator{
+        private int count = 0;
+        @Override
+        public Question generateQuestion() {
+            count++;
+            return new Question(String.valueOf(count), new String[] {"a", "b", "c"}, 1);
+        }
+    }
+
     private MessageHandler handler = new MessageHandler();
-    
+    private TestQuestionGenerator generator = new TestQuestionGenerator();
+
     @Test
     public void Question_ToString_test(){
-        var quest = new Question("q", new String[] {"a", "b", "c"}, 1);
-        assertEquals("q\n\n" + "1. a\n2. b\n3. c\n", quest.toString());
+        assertEquals("1\n\n" + "1. a\n2. b\n3. c\n", generator.generateQuestion().toString());
     }
 
     @Test
@@ -83,5 +94,47 @@ public class Task1_tests {
         messageField.setAccessible(true);
 
         assertEquals(messageField.get(handler), message);
+    }
+
+    @Test
+    public void SimplestGameMod_correctAnswer_test() throws NoSuchFieldException, IllegalAccessException{
+        var game = new SimplestGameMod();
+
+        var generatorField = game.getClass().getDeclaredField("generator");
+        generatorField.setAccessible(true);
+        generatorField.set(game, new TestQuestionGenerator());
+
+        game.getQuestion();
+
+        var messageField = game.getClass().getDeclaredField("correctAnswerMessage");
+        messageField.setAccessible(true);
+
+        var questField = game.getClass().getDeclaredField("quest");
+        questField.setAccessible(true);
+
+        var skipMessageField = game.getClass().getDeclaredField("skipMessage");
+        skipMessageField.setAccessible(true);
+
+        var message = game.checkUserAnswer("2");
+
+        assertEquals((String) messageField.get(game) + skipMessageField.get(game) + questField.get(game), message);
+    }
+
+    @Test
+    public void SimplestGameMod_uncorrectAnswer_test() throws NoSuchFieldException, IllegalAccessException{
+        var game = new SimplestGameMod();
+
+        var generatorField = game.getClass().getDeclaredField("generator");
+        generatorField.setAccessible(true);
+        generatorField.set(game, new TestQuestionGenerator());
+
+        game.getQuestion();
+
+        var messageField = game.getClass().getDeclaredField("uncorrectAnswerMessage");
+        messageField.setAccessible(true);
+
+        var message = game.checkUserAnswer("1");
+
+        assertEquals(messageField.get(game), message);
     }
 }
