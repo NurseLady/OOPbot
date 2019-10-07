@@ -10,8 +10,10 @@ import static org.junit.Assert.*;
 import static bot.StringConstants.*;
 
 public class Task1_tests {
+
     private class TestQuestionGenerator implements QuestionsGenerator{
         private int count = 0;
+
         @Override
         public Question generateQuestion() {
             count++;
@@ -77,8 +79,8 @@ public class Task1_tests {
     public void SimplestGameMod_correctAnswer_test(){
         var game = new SimplestGameMod(new TestQuestionGenerator());
         game.getQuestion();
-        var questField = game.getQuest();
         var message = game.checkUserAnswer("2");
+        var questField = game.getQuest();
 
         assertEquals(correctAnswerMessage + skipMessage + questField, message);
     }
