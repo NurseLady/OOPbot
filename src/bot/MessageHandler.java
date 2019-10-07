@@ -1,7 +1,6 @@
 package bot;
 
 import interfaces.GameMode;
-import org.junit.*;
 
 import static bot.StringConstants.*;
 
@@ -44,5 +43,9 @@ public class MessageHandler {
             }
         }
         return result;
+    }
+
+    public GameMode getGame (){
+        return game;
     }
 }

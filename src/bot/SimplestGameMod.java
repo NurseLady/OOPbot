@@ -32,4 +32,8 @@ public class SimplestGameMod implements GameMode {
     public String Skip() {
         return skipMessage + this.getQuestion();
     }
+
+    public Question getQuest() {
+        return quest;
+    }
 }
