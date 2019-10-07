@@ -15,11 +15,11 @@ public class MessageHandler {
         if (game != null){
             switch (message){
                 case "s":
-                    result = gameStartMessage + game.getQuestion();
+                    result = StringConstants.gameStartMessage + game.getQuestion();
                     break;
                 case "f":
                     game = null;
-                    result = gameEndMessage;
+                    result = StringConstants.gameEndMessage;
                     break;
                 case "n":
                     result = game.Skip();
@@ -31,14 +31,14 @@ public class MessageHandler {
         } else {
             switch (message) {
                 case "n":
-                    result = noGameMessage;
+                    result = StringConstants.noGameMessage;
                     break;
                 case "y":
                     game = new SimplestGameMod(new SimplestQuestionsGenerator());
                     result = this.handleMessage("s");
                     break;
                 default:
-                    result = incorrectInputMessage;
+                    result = StringConstants.incorrectInputMessage;
                     break;
             }
         }
