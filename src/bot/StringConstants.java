@@ -1,7 +1,7 @@
 package bot;
 
 public class StringConstants {
-    public String startMessage = "Привет! Я бот, с которым можно поиграть. Начать игру? (y/n)";
+    public static String startMessage = "Привет! Я бот, с которым можно поиграть. Начать игру? (y/n)";
     public static String gameStartMessage = "Игра началась!\n" +
             "Если вопрос слишком сложный, отправь \"n\" и я его пропущу.\n" +
             "Когда игра надоест, отправь \"f\" и она закончится.\n\n";

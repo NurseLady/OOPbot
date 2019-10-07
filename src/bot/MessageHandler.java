@@ -4,13 +4,6 @@ import interfaces.GameMode;
 
 public class MessageHandler {
     private GameMode game;
-//    public String startMessage = "Привет! Я бот, с которым можно поиграть. Начать игру? (y/n)";
-//    private String gameStartMessage = "Игра началась!\n" +
-//            "Если вопрос слишком сложный, отправь \"n\" и я его пропущу.\n" +
-//            "Когда игра надоест, отправь \"f\" и она закончится.\n\n";
-//    private String gameEndMessage = "Игра окончена. Хочешь поиграть ещё? (y/n)";
-//    private String noGameMessage = "Отправь \"y\" если передумаешь.";
-//    private String incorrectInputMessage = "Я таких слов не знаю!";
 
     public String handleMessage(String message){
         message = message.toLowerCase().replaceAll(System.getProperty("line.separator"), " ").trim();
