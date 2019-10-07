@@ -2,6 +2,9 @@ package bot;
 
 import interfaces.GameMode;
 
+import static bot.StringConstants.*;
+
+
 public class MessageHandler {
     private GameMode game;
 
