@@ -1,6 +1,7 @@
 package bot;
 
 import interfaces.GameMode;
+import org.junit.*;
 
 import static bot.StringConstants.*;
 
@@ -34,7 +35,7 @@ public class MessageHandler {
                     result = StringConstants.noGameMessage;
                     break;
                 case "y":
-                    game = new SimplestGameMod();
+                    game = new SimplestGameMod(new SimplestQuestionsGenerator());
                     result = this.handleMessage("s");
                     break;
                 default:
