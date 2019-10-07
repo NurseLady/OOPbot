@@ -4,13 +4,13 @@ import interfaces.GameMode;
 
 public class MessageHandler {
     private GameMode game;
-    public String startMessage = "Привет! Я бот, с которым можно поиграть. Начать игру? (y/n)";
-    private String gameStartMessage = "Игра началась!\n" +
-            "Если вопрос слишком сложный, отправь \"n\" и я его пропущу.\n" +
-            "Когда игра надоест, отправь \"f\" и она закончится.\n\n";
-    private String gameEndMessage = "Игра окончена. Хочешь поиграть ещё? (y/n)";
-    private String noGameMessage = "Отправь \"y\" если передумаешь.";
-    private String incorrectInputMessage = "Я таких слов не знаю!";
+//    public String startMessage = "Привет! Я бот, с которым можно поиграть. Начать игру? (y/n)";
+//    private String gameStartMessage = "Игра началась!\n" +
+//            "Если вопрос слишком сложный, отправь \"n\" и я его пропущу.\n" +
+//            "Когда игра надоест, отправь \"f\" и она закончится.\n\n";
+//    private String gameEndMessage = "Игра окончена. Хочешь поиграть ещё? (y/n)";
+//    private String noGameMessage = "Отправь \"y\" если передумаешь.";
+//    private String incorrectInputMessage = "Я таких слов не знаю!";
 
     public String handleMessage(String message){
         message = message.toLowerCase().replaceAll(System.getProperty("line.separator"), " ").trim();
@@ -19,11 +19,11 @@ public class MessageHandler {
         if (game != null){
             switch (message){
                 case "s":
-                    result = gameStartMessage + game.getQuestion();
+                    result = StringConstants.gameStartMessage + game.getQuestion();
                     break;
                 case "f":
                     game = null;
-                    result = gameEndMessage;
+                    result = StringConstants.gameEndMessage;
                     break;
                 case "n":
                     result = game.Skip();
@@ -35,14 +35,14 @@ public class MessageHandler {
         } else {
             switch (message) {
                 case "n":
-                    result = noGameMessage;
+                    result = StringConstants.noGameMessage;
                     break;
                 case "y":
                     game = new SimplestGameMod();
                     result = this.handleMessage("s");
                     break;
                 default:
-                    result = incorrectInputMessage;
+                    result = StringConstants.incorrectInputMessage;
                     break;
             }
         }
