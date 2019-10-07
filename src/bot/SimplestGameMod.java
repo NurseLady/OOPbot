@@ -3,13 +3,15 @@ package bot;
 import interfaces.GameMode;
 import interfaces.QuestionsGenerator;
 
-public class SimplestGameMod implements GameMode {
-    private QuestionsGenerator generator = new SimplestQuestionsGenerator();
-    private Question quest;
-    private String skipMessage = "Хорошо, держи следующий вопрос: \n\n";
-    private String correctAnswerMessage = "И это правильный ответ! ";
-    private String uncorrectAnswerMessage = "Не верно, попробуй ещё разок!";
+import static bot.StringConstants.*;
 
+public class SimplestGameMod implements GameMode {
+    private QuestionsGenerator generator;
+    private Question quest;
+
+    public  SimplestGameMod(QuestionsGenerator generator){
+        this.generator = generator;
+    }
 
     @Override
     public String getQuestion() {
