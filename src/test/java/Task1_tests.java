@@ -1,9 +1,8 @@
-package tests;
-
 import bot.MessageHandler;
 import bot.Question;
 import bot.SimplestGameMod;
 import interfaces.QuestionsGenerator;
+import bot.Question;
 import org.junit.*;
 
 import static org.junit.Assert.*;
@@ -11,7 +10,7 @@ import static bot.StringConstants.*;
 
 public class Task1_tests {
 
-    private class TestQuestionGenerator implements QuestionsGenerator{
+    private static class TestQuestionGenerator implements QuestionsGenerator{
         private int count = 0;
 
         @Override
