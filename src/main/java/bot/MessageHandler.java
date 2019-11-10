@@ -1,5 +1,6 @@
 package bot;
 
+import com.google.common.annotations.VisibleForTesting;
 import interfaces.GameMode;
 
 import static bot.StringConstants.*;
@@ -36,6 +37,7 @@ public class MessageHandler {
         return result;
     }
 
+    @VisibleForTesting
     public GameMode getGame (){
         return game;
     }

@@ -2,7 +2,6 @@ import bot.MessageHandler;
 import bot.Question;
 import bot.SimplestGameMod;
 import interfaces.QuestionsGenerator;
-import bot.Question;
 import org.junit.*;
 
 import static org.junit.Assert.*;
@@ -90,6 +89,6 @@ public class Task1_tests {
         game.getQuestion();
         var message = game.checkUserAnswer("1");
 
-        assertEquals(uncorrectAnswerMessage, message);
+        assertEquals(incorrectAnswerMessage, message);
     }
 }

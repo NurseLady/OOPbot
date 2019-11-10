@@ -11,5 +11,5 @@ public class StringConstants {
 
     public static String skipMessage = "Хорошо, держи следующий вопрос: \n\n";
     public static String correctAnswerMessage = "И это правильный ответ! ";
-    public static String uncorrectAnswerMessage = "Не верно, попробуй ещё разок!";
+    public static String incorrectAnswerMessage = "Не верно, попробуй ещё разок!";
 }

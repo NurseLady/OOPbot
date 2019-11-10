@@ -1,3 +1,4 @@
+/*
 package bot;
 
 import org.telegram.telegrambots.ApiContextInitializer;
@@ -46,3 +47,4 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
 }
+*/

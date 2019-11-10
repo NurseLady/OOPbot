@@ -1,5 +1,6 @@
 package bot;
 
+import com.google.common.annotations.VisibleForTesting;
 import interfaces.GameMode;
 import interfaces.QuestionsGenerator;
 
@@ -25,7 +26,7 @@ public class SimplestGameMod implements GameMode {
         if (Integer.parseInt(message) == quest.correctAnswerIndex + 1){
             return correctAnswerMessage + this.Skip();
         }
-        return uncorrectAnswerMessage;
+        return incorrectAnswerMessage;
     }
 
     @Override
@@ -33,6 +34,7 @@ public class SimplestGameMod implements GameMode {
         return skipMessage + this.getQuestion();
     }
 
+    @VisibleForTesting
     public Question getQuest() {
         return quest;
     }
