@@ -1,6 +1,7 @@
 package bot;
 
 public class Question {
+    int ID = 0;
     private String question;
     private String[] answers;
     int correctAnswerIndex;
@@ -9,6 +10,13 @@ public class Question {
         this.question = question;
         this.answers = answers;
         this.correctAnswerIndex = correctAnswerIndex;
+    }
+
+    public Question(String question, String[] answers, int correctAnswerIndex, int ID){
+        this.question = question;
+        this.answers = answers;
+        this.correctAnswerIndex = correctAnswerIndex;
+        this.ID = ID;
     }
 
     @Override

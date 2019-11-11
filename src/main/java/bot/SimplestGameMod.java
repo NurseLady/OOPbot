@@ -9,9 +9,13 @@ import static bot.StringConstants.*;
 public class SimplestGameMod implements GameMode {
     private QuestionsGenerator generator;
     private Question quest;
+    private int ID = 0;
 
-    public  SimplestGameMod(QuestionsGenerator generator){
+    public  SimplestGameMod(QuestionsGenerator generator){ this.generator = generator; }
+
+    public  SimplestGameMod(QuestionsGenerator generator, int ID){
         this.generator = generator;
+        this.ID = ID;
     }
 
     @Override
@@ -37,5 +41,10 @@ public class SimplestGameMod implements GameMode {
     @VisibleForTesting
     public Question getQuest() {
         return quest;
+    }
+
+    @Override
+    public int getGameID() {
+        return ID;
     }
 }
