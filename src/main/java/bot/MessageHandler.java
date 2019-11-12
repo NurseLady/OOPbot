@@ -2,43 +2,89 @@ package bot;
 
 import com.google.common.annotations.VisibleForTesting;
 import interfaces.GameMode;
+import interfaces.Command;
+
+import java.util.HashMap;
 
 import static bot.StringConstants.*;
 
 
 public class MessageHandler {
+    private String message;
     private GameMode game;
+    private String state = "NoGame";
+    private HashMap<String, HashMap<String, Command>> stateDict = new HashMap<>();
+
+    public MessageHandler(){
+        stateDict.put("NoGame", new HashMap<>());
+        stateDict.put("Game", new HashMap<>());
+        stateDict.get("NoGame").put("y", new StartGame());
+        stateDict.get("NoGame").put("n", new NoGame());
+        stateDict.get("NoGame").put("default", new IncorrectMessage());
+        stateDict.get("Game").put("f", new FinishGame());
+        stateDict.get("Game").put("n", new SkipQuestion());
+        stateDict.get("Game").put("default", new CheckAnswer());
+
+    }
 
     public String handleMessage(String message){
-        message = message.toLowerCase().replaceAll(System.getProperty("line.separator"), " ").trim();
-        String result;
-        
-        if (game != null){
-            if ("s".equals(message)) {
-                result = gameStartMessage + game.getQuestion();
-            } else if ("f".equals(message)) {
-                game = null;
-                result = gameEndMessage;
-            } else if ("n".equals(message)) {
-                result = game.Skip();
-            } else {
-                result = game.checkUserAnswer(message);
-            }
-        } else {
-            if ("n".equals(message)) {
-                result = noGameMessage;
-            } else if ("y".equals(message)) {
-                game = new SimplestGameMod(new SimplestQuestionsGenerator());
-                result = this.handleMessage("s");
-            } else {
-                result = incorrectInputMessage;
-            }
-        }
-        return result;
+        this.message = message.toLowerCase().replaceAll(System.getProperty("line.separator"), " ").trim();
+
+        return stateDict.get(state).containsKey(message)
+                ? stateDict.get(state).get(message).DoSomething()
+                : stateDict.get(state).getOrDefault("default", new IncorrectMessage()).DoSomething();
     }
 
     @VisibleForTesting
     public GameMode getGame (){
         return game;
+    }
+
+    public class StartGame implements Command {
+        @Override
+        public String DoSomething() {
+            game = new SimplestGameMod(new SimplestQuestionsGenerator());
+            state = "Game";
+            return gameStartMessage + game.getQuestion();
+        }
+    }
+
+    public class NoGame implements Command {
+        @Override
+        public String DoSomething() {
+            game = null;
+            state = "NoGame";
+            return noGameMessage;
+        }
+    }
+
+    public class FinishGame implements Command {
+        @Override
+        public String DoSomething() {
+            game = null;
+            state = "NoGame";
+            return gameEndMessage;
+        }
+    }
+
+    public class SkipQuestion implements Command {
+        @Override
+        public String DoSomething() {
+            return game.Skip();
+        }
+    }
+
+    public class IncorrectMessage implements Command {
+        @Override
+        public String DoSomething() {
+            return incorrectInputMessage;
+        }
+    }
+
+    public class CheckAnswer implements Command {
+        @Override
+        public String DoSomething() {
+            return game.checkUserAnswer(message);
+        }
     }
 }
