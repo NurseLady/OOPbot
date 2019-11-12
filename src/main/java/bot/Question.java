@@ -1,7 +1,10 @@
 package bot;
 
-public class Question {
-    int ID = 0;
+import java.io.Serializable;
+
+public class Question implements Serializable {
+    private static final long serialVersionUID = 1L;
+    protected int ID = 0;
     private String question;
     private String[] answers;
     int correctAnswerIndex;
