@@ -26,10 +26,12 @@ public class SimplestGameMod implements GameMode {
 
     @Override
     public String checkUserAnswer(String message) {
+        try {
+            if (Integer.parseInt(message) == quest.correctAnswerIndex + 1) {
+                return correctAnswerMessage + this.Skip();
+            }
+        } catch (Exception er) { }
 
-        if (Integer.parseInt(message) == quest.correctAnswerIndex + 1){
-            return correctAnswerMessage + this.Skip();
-        }
         return incorrectAnswerMessage;
     }
 

@@ -23,4 +23,13 @@ public class SimplestGameModTests {
 
         assertEquals(incorrectAnswerMessage, message);
     }
+
+    @Test
+    public void SimplestGameMod_StringAnswer_test() {
+        var game = new SimplestGameMod(new TestQuestionGenerator());
+        game.getQuestion();
+        var message = game.checkUserAnswer("sdfsdf");
+
+        assertEquals(incorrectAnswerMessage, message);
+    }
 }
