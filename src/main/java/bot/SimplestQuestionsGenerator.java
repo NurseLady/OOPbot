@@ -12,7 +12,7 @@ public class SimplestQuestionsGenerator implements QuestionsGenerator {
         for (int i = 0; i < 4; i++){
             answers[i] = String.valueOf(rnd.nextInt(100));
         }
-        int index = rnd.nextInt(3);
+        int index = rnd.nextInt(4);
         return  new Question(question, answers, index);
     }
 }
