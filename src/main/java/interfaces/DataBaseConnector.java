@@ -1,16 +1,14 @@
 package interfaces;
 
+import DataClasses.CustomGameData;
 import bot.Question;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
 public interface DataBaseConnector {
-    static void WriteQuestion(Question quest, int groupID) {
-        return;
-    }
+    static boolean WriteQuestion(Question quest) { return false; }
 
-    static Question ReadQuestion(int groupID, int questID) {
-        return null;
-    };
+    static Question ReadQuestion(int questID) { return null; };
+
+    static boolean WriteGame () { return false; }
+
+    static CustomGameData ReadGame (int GameID) { return null; }
 }

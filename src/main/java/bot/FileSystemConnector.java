@@ -4,10 +4,12 @@ import interfaces.DataBaseConnector;
 
 import java.io.*;
 
+import static bot.StringConstants.errMessage;
+
 public class FileSystemConnector implements DataBaseConnector {
-    public static void WriteQuestion(Question quest, int groupID) {
+    public static boolean WriteQuestion(Question quest) {
         try {
-            FileOutputStream outputStream = new FileOutputStream(groupID + "_" + quest.ID +"_question.ser");
+            FileOutputStream outputStream = new FileOutputStream("questions/" + quest.ID +"_question.ser");
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
 
             // сохраняем игру в файл
@@ -15,23 +17,25 @@ public class FileSystemConnector implements DataBaseConnector {
 
             //закрываем поток и освобождаем ресурсы
             objectOutputStream.close();
+            return true;
         } catch (Throwable e){
-            System.out.println("Упс, при записи ошибочка вышла... " + e.toString());
+            System.out.println(errMessage + e.toString());
+            return false;
         }
 
     }
 
-    public static Question ReadQuestion(int groupID, int questID) {
+    public static Question ReadQuestion(int questID) {
         Question question = null;
         try {
-            FileInputStream fileInputStream = new FileInputStream(groupID + "_" + questID +"_question.ser");
+            FileInputStream fileInputStream = new FileInputStream("questions/" + questID +"_question.ser");
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 
             question = (Question) objectInputStream.readObject();
 
             objectInputStream.close();
         } catch (Throwable e){
-            System.out.println("Упс, при чтении ошибочка вышла... " + e.toString());
+            System.out.println(errMessage + e.toString());
         }
 
         return question;

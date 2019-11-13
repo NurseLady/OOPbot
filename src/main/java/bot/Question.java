@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Question implements Serializable {
     private static final long serialVersionUID = 1L;
-    protected int ID = 0;
+    public final int ID;
     private String question;
     private String[] answers;
     int correctAnswerIndex;
@@ -13,6 +13,7 @@ public class Question implements Serializable {
         this.question = question;
         this.answers = answers;
         this.correctAnswerIndex = correctAnswerIndex;
+        ID = 0;
     }
 
     public Question(String question, String[] answers, int correctAnswerIndex, int ID){

@@ -7,5 +7,6 @@ public interface GameMode {
     String checkUserAnswer(String message);
     String Skip();
     Question getQuest();
+    String getGameName();
     int getGameID();
 }
