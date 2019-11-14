@@ -6,6 +6,8 @@ import interfaces.GameMode;
 
 import java.util.ArrayList;
 
+import static bot.StringConstants.startMessage;
+
 public class MessageHandler {
     private final int ID = 0;
     private MessageHandlerData data;
@@ -27,17 +29,16 @@ public class MessageHandler {
                 ? data.state.getCommandDict().get(message).execute(data)
                 : data.state.getCommandDict().getOrDefault("default", bot.Command.HandleIncorrectMessage).execute(data);
 
-        setData(newData);
-
-        return newData.message;
-    }
-
-    private void setData(MessageHandlerData newData) {
         data = newData.clone();
-        data.message = null;
+
+        return data.message;
     }
 
     public int getID(){ return ID; }
+
+    public String getStartMessage(){
+        return startMessage + data.state.getCommandList();
+    };
 
     @VisibleForTesting
     public GameMode getGame () { return data.gameList.get(data.gameIndex); }

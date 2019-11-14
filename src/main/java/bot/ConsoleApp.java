@@ -8,7 +8,7 @@ public class ConsoleApp {
         Scanner in = new Scanner(System.in);
         String message;
 
-        System.out.println(StringConstants.startMessage);
+        System.out.println(chat.getStartMessage());
 
         while (true){
             message = in.next();

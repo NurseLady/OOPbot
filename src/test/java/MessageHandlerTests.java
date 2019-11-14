@@ -9,11 +9,6 @@ public class MessageHandlerTests {
         private MessageHandler handler = new MessageHandler();
 
         @Test
-        public void MessageHandler_noGame_test() {
-            assertEquals(noGameMessage, handler.handleMessage("n"));
-        }
-
-        @Test
         public void MessageHandler_incorrectMessage_test() {
             assertEquals(incorrectInputMessage, handler.handleMessage("ndsfdsdf"));
         }

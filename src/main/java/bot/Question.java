@@ -25,7 +25,7 @@ public class Question implements Serializable {
 
     @Override
     public String toString(){
-        StringBuilder result = new StringBuilder(question + "\n\n");
+        StringBuilder result = new StringBuilder(question + "\n");
 
         for (int i = 0; i < answers.length; i++)
             result.append(i + 1).append(". ").append(answers[i]).append("\n");

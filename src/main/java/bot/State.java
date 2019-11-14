@@ -12,8 +12,8 @@ public enum State implements StateEnum {
         public HashMap<String, Command> getCommandDict(){
             return new HashMap<>() {{
                 put("y", Command.StartGame);
-                put("n", Command.DontStartGame);
                 put("s", Command.SelectGame);
+                put("c", Command.CreateNewGame);
                 put("default", Command.HandleIncorrectMessage);
             }};
         }
@@ -41,4 +41,16 @@ public enum State implements StateEnum {
             }};
         }
     };
+
+    public String getCommandList(){
+        StringBuilder result = new StringBuilder();
+        for (var i : this.getCommandDict().keySet())
+            if (!i.equals("default"))
+                result.append(i) .append(" - ").append(this.getCommandDict().get(i).getCommandName()).append("\n");
+
+        if (result.length() > 0)
+            result.insert(0, "Комманды: \n");
+
+        return result.append("\n").toString();
+    }
 }

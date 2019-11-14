@@ -7,35 +7,44 @@ import static bot.StringConstants.*;
 
 interface CommandEnum {
     MessageHandlerData execute(MessageHandlerData data);
+    String getCommandName();
 }
 
 public enum Command implements CommandEnum {
     StartGame{
+        private String name = "Играть";
+
         @Override
         public MessageHandlerData execute(MessageHandlerData data) {
             var d = data.clone();
             d.state = State.GAME;
-            d.message = gameStartMessage + data.gameList.get(data.gameIndex).getQuestion();
+            d.message = gameStartMessage + d.state.getCommandList() + d.gameList.get(data.gameIndex).getQuestion();
             return d;
         }
 
+        @Override
+        public String getCommandName() {
+            return name;
+        }
+
     },
-    DontStartGame{
+    CreateNewGame{
+        private String name = "Создать новый режим [Disable]";
         @Override
         public MessageHandlerData execute(MessageHandlerData data) {
             var d = data.clone();
-            d.state = State.MENU;
-            d.message = noGameMessage;
+            d.message = "Пока в разработке :(";
             return d;
         }
-    },
-    CreateNewGame{
+
         @Override
-        public MessageHandlerData execute(MessageHandlerData data) {
-            return null;
+        public String getCommandName() {
+            return name;
         }
     },
     SelectGame{
+        private String name = "Выбрать режим игры";
+
         @Override
         public MessageHandlerData execute(MessageHandlerData data) {
             StringBuilder result = new StringBuilder("Выбери режим: \n\n");
@@ -45,8 +54,13 @@ public enum Command implements CommandEnum {
                 result.append(i).append(". ").append(d.gameList.get(i - 1).getGameName()).append("\n");
 
             d.state = State.SELECT;
-            d.message = result.toString();
+            d.message = d.state.getCommandList() + result.toString();
             return d;
+        }
+
+        @Override
+        public String getCommandName() {
+            return name;
         }
     },
     HandleIncorrectMessage{
@@ -56,22 +70,41 @@ public enum Command implements CommandEnum {
             d.message = incorrectInputMessage;
             return d;
         }
+
+        @Override
+        public String getCommandName() {
+            return null;
+        }
     },
     FinishGame{
+        private String name = "Закончить игру";
+
         @Override
         public MessageHandlerData execute(MessageHandlerData data) {
             var d = data.clone();
             d.state = State.MENU;
-            d.message = gameEndMessage;
+            d.message = gameEndMessage + d.state.getCommandList();
             return d;
+        }
+
+        @Override
+        public String getCommandName() {
+            return name;
         }
     },
     SkipQuestion{
+        private String name = "Пропустить вопрос";
+
         @Override
         public MessageHandlerData execute(MessageHandlerData data) {
             var d = data.clone();
             d.message = data.gameList.get(data.gameIndex).Skip();
             return d;
+        }
+
+        @Override
+        public String getCommandName() {
+            return name;
         }
     },
     CheckAnswer{
@@ -81,8 +114,14 @@ public enum Command implements CommandEnum {
             d.message = data.gameList.get(data.gameIndex).checkUserAnswer(d.message);
             return d;
         }
+
+        @Override
+        public String getCommandName() {
+            return null;
+        }
     },
     SetGameIndex{
+        private String name;
         @Override
         public MessageHandlerData execute(MessageHandlerData data) {
             var d = data.clone();
@@ -92,13 +131,18 @@ public enum Command implements CommandEnum {
                     d.gameIndex = Integer.parseInt(d.message) - 1;
                     d.state = State.MENU;
                     d.message = changeGameModMessage + d.gameList.get(d.gameIndex).getGameName() + "\n\n" +
-                            startMessage;
+                            d.state.getCommandList();
                     return d;
                 }
             } catch (Exception ignored) { }
 
             d.message = incorrectInputMessage;
             return d;
+        }
+
+        @Override
+        public String getCommandName() {
+            return name;
         }
     }
 }
