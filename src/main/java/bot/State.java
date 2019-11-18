@@ -15,6 +15,7 @@ public enum State implements StateEnum {
                 put("s", Command.SelectGame);
                 put("c", Command.CreateNewGame);
                 put("default", Command.HandleIncorrectMessage);
+                put("/start", Command.HandleStartMessage);
             }};
         }
     },
@@ -45,7 +46,7 @@ public enum State implements StateEnum {
     public String getCommandList(){
         StringBuilder result = new StringBuilder();
         for (var i : this.getCommandDict().keySet())
-            if (!i.equals("default"))
+            if (!i.equals("default") && !i.equals("/start"))
                 result.append(i) .append(" - ").append(this.getCommandDict().get(i).getCommandName()).append("\n");
 
         if (result.length() > 0)

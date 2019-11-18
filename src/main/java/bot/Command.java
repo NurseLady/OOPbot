@@ -120,6 +120,20 @@ public enum Command implements CommandEnum {
             return null;
         }
     },
+    HandleStartMessage{
+        @Override
+        public MessageHandlerData execute(MessageHandlerData data) {
+            var d = data.clone();
+            d.state = State.MENU;
+            d.message = new MessageHandler().getStartMessage();
+            return d;
+        }
+
+        @Override
+        public String getCommandName() {
+            return null;
+        }
+    },
     SetGameIndex{
         private String name;
         @Override

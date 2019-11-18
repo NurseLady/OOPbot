@@ -6,13 +6,13 @@ import interfaces.QuestionsGenerator;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class CastomQuestionGenerator implements QuestionsGenerator {
+public class CustomQuestionGenerator implements QuestionsGenerator {
     private boolean isRandomOrder;
     private ArrayList<Question> questions;
     private ArrayList<Integer> order = new ArrayList<>();
     private int lastQuestionIndex = 0;
 
-    public CastomQuestionGenerator(boolean isRandomOrder, CustomGameData gameData){
+    public CustomQuestionGenerator(boolean isRandomOrder, CustomGameData gameData){
         this.isRandomOrder = isRandomOrder;
         questions = gameData.getQuestionArrayList();
         addIndexToOrder();
@@ -37,6 +37,8 @@ public class CastomQuestionGenerator implements QuestionsGenerator {
             indexList.add(order.size() + i);
 
         if (!isRandomOrder)
-            Collections.shuffle(order);
+            Collections.shuffle(indexList);
+
+        order.addAll(indexList);
     }
 }

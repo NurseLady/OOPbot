@@ -23,7 +23,7 @@ public class SimplestGameMod implements GameMode {
 
     public SimplestGameMod(int ID, boolean isRandomOrder, CustomGameData gameData, String gameName) {
         this.ID = ID;
-        generator = new CastomQuestionGenerator(isRandomOrder, gameData);
+        generator = new CustomQuestionGenerator(isRandomOrder, gameData);
         name = gameName;
     }
 
