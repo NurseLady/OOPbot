@@ -7,6 +7,6 @@ public class QuestionTest {
 
     @Test
     public void Question_ToString_test(){
-        assertEquals("1\n\n" + "1. a\n2. b\n3. c\n", generator.generateQuestion().toString());
+        assertEquals("1\n" + "1. a\n2. b\n3. c\n", generator.generateQuestion().toString());
     }
 }
