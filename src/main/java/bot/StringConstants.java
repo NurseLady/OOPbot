@@ -10,4 +10,5 @@ public class StringConstants {
     public static final String incorrectAnswerMessage = "Не верно, попробуй ещё разок!";
     public static final String changeGameModMessage = "Игровой режим изменён на ";
     public static final String errMessage = "Упс, ошибочка вышла... ";
+    public static final String errLoadMessage = "Ой! Вы ничего не сохраняли, либо произошла ошибка!";
 }

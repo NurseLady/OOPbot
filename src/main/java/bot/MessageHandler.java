@@ -19,7 +19,7 @@ public class MessageHandler {
                     "Default Simplest Game"));
         }};
         State state = State.MENU;
-        data = new MessageHandlerData(ID, null, gameIndex, gameList,state);
+        data = new MessageHandlerData(ID, null, gameIndex, gameList, state);
     }
 
     public String handleMessage(String message) {
@@ -27,7 +27,9 @@ public class MessageHandler {
 
         var newData = data.state.getCommandDict().containsKey(message)
                 ? data.state.getCommandDict().get(message).execute(data)
-                : data.state.getCommandDict().getOrDefault("default", bot.Command.HandleIncorrectMessage).execute(data);
+                : data.state.getCommandDict()
+                            .getOrDefault("default", bot.Command.HandleIncorrectMessage)
+                            .execute(data);
 
         data = newData.clone();
 
@@ -42,4 +44,7 @@ public class MessageHandler {
 
     @VisibleForTesting
     public GameMode getGame () { return data.gameList.get(data.gameIndex); }
+
+    @VisibleForTesting
+    public MessageHandlerData getData() { return data; }
 }

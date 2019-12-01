@@ -158,5 +158,48 @@ public enum Command implements CommandEnum {
         public String getCommandName() {
             return name;
         }
+    },
+    LoadQuestionText{
+        private String name = "Загрузить текст сохраненного вопроса";
+
+        @Override
+        public MessageHandlerData execute(MessageHandlerData data) {
+            var d = data.clone();
+
+            try {
+                d.message = FileSystemConnector.readQuestion(0).toString();
+            } catch (Exception e) {
+                d.message = errLoadMessage;
+            }
+
+            return d;
+        }
+
+        @Override
+        public String getCommandName() {
+            return name;
+        }
+    },
+    SaveQuestion{
+        private String name = "Сохранить вопрос";
+
+        @Override
+        public MessageHandlerData execute(MessageHandlerData data) {
+            var d = data.clone();
+
+            try {
+                FileSystemConnector.writeQuestion(d.gameList.get(d.gameIndex).getQuest());
+                d.message = "Вопрос сохранен";
+            } catch (Exception e) {
+                d.message = "Ой! Что-то пошло не так!";
+            }
+
+            return d;
+        }
+
+        @Override
+        public String getCommandName() {
+            return name;
+        }
     }
 }

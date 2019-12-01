@@ -16,6 +16,7 @@ public enum State implements StateEnum {
                 put("c", Command.CreateNewGame);
                 put("default", Command.HandleIncorrectMessage);
                 put("/start", Command.HandleStartMessage);
+                put("l", Command.LoadQuestionText);
             }};
         }
     },
@@ -24,6 +25,7 @@ public enum State implements StateEnum {
             return new HashMap<>() {{
                 put("f", Command.FinishGame);
                 put("n", Command.SkipQuestion);
+                put("s", Command.SaveQuestion);
                 put("default", Command.CheckAnswer);
             }};
         }
