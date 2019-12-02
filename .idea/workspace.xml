@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3f7dec3-d1f7-4968-a8e0-96ef2f92d484" name="Default Changelist" comment="" />
+    <list default="true" id="a3f7dec3-d1f7-4968-a8e0-96ef2f92d484" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_android_support_support_annotations_28_0_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOPbot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OOPbot.iml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +151,7 @@
       <workItem from="1574051959908" duration="4055000" />
       <workItem from="1574585315964" duration="6254000" />
       <workItem from="1574807056484" duration="1875000" />
-      <workItem from="1575221958248" duration="14128000" />
+      <workItem from="1575221958248" duration="14822000" />
     </task>
     <servers />
   </component>
