@@ -3,13 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="a3f7dec3-d1f7-4968-a8e0-96ef2f92d484" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_android_support_support_annotations_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_28_1_jre.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_28_0_jre.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_mojo_animal_sniffer_annotations_1_18.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_mojo_animal_sniffer_annotations_1_17.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/questions/0_question.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OOPbot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OOPbot.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bot/MessageHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/MessageHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bot/SimplestGameMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/SimplestGameMod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bot/MessageHandler$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bot/MessageHandler$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bot/MessageHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bot/MessageHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bot/SimplestGameMod.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bot/SimplestGameMod.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -156,7 +158,8 @@
       <workItem from="1574051959908" duration="4055000" />
       <workItem from="1574585315964" duration="6254000" />
       <workItem from="1574807056484" duration="1875000" />
-      <workItem from="1575221958248" duration="16245000" />
+      <workItem from="1575221958248" duration="17675000" />
+      <workItem from="1575269851094" duration="1171000" />
     </task>
     <servers />
   </component>
