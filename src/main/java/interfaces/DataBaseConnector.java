@@ -1,6 +1,6 @@
 package interfaces;
 
-import DataClasses.CustomGameData;
+import dataClasses.CustomGameData;
 import bot.Question;
 
 public interface DataBaseConnector {

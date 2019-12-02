@@ -1,6 +1,6 @@
 package bot;
 
-import DataClasses.MessageHandlerData;
+import dataClasses.MessageHandlerData;
 import com.google.common.annotations.VisibleForTesting;
 import interfaces.GameMode;
 
@@ -23,10 +23,10 @@ public class MessageHandler {
     }
 
     public String handleMessage(String message) {
-        data.message = message.toLowerCase().replaceAll(System.getProperty("line.separator"), " ").trim();
+        data.message = message.replaceAll(System.getProperty("line.separator"), " ").trim().toLowerCase();
 
-        var newData = data.state.getCommandDict().containsKey(message)
-                ? data.state.getCommandDict().get(message).execute(data)
+        var newData = data.state.getCommandDict().containsKey(data.message)
+                ? data.state.getCommandDict().get(data.message).execute(data)
                 : data.state.getCommandDict()
                             .getOrDefault("default", bot.Command.HandleIncorrectMessage)
                             .execute(data);

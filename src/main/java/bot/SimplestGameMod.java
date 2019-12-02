@@ -1,6 +1,6 @@
 package bot;
 
-import DataClasses.CustomGameData;
+import dataClasses.CustomGameData;
 import com.google.common.annotations.VisibleForTesting;
 import interfaces.GameMode;
 import interfaces.QuestionsGenerator;

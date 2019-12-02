@@ -1,6 +1,6 @@
 package bot;
 
-import DataClasses.MessageHandlerData;
+import dataClasses.MessageHandlerData;
 
 import static bot.StringConstants.*;
 
