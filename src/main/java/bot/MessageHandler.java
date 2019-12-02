@@ -1,7 +1,7 @@
 package bot;
 
-import dataClasses.MessageHandlerData;
 import com.google.common.annotations.VisibleForTesting;
+import dataClasses.MessageHandlerData;
 import interfaces.GameMode;
 
 import java.util.ArrayList;

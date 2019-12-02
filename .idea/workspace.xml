@@ -39,6 +39,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
@@ -146,7 +147,7 @@
       <workItem from="1574051959908" duration="4055000" />
       <workItem from="1574585315964" duration="6254000" />
       <workItem from="1574807056484" duration="1875000" />
-      <workItem from="1575221958248" duration="13520000" />
+      <workItem from="1575221958248" duration="14128000" />
     </task>
     <servers />
   </component>
