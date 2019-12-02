@@ -1,7 +1,6 @@
 package bot;
 
 import dataClasses.CustomGameData;
-import com.google.common.annotations.VisibleForTesting;
 import interfaces.GameMode;
 import interfaces.QuestionsGenerator;
 
@@ -47,7 +46,6 @@ public class SimplestGameMod implements GameMode {
     @Override
     public String Skip() { return skipMessage + this.getQuestion(); }
 
-    @VisibleForTesting
     public Question getQuest() { return quest; }
 
     @Override

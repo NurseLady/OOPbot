@@ -1,6 +1,5 @@
 package bot;
 
-import com.google.common.annotations.VisibleForTesting;
 import dataClasses.MessageHandlerData;
 import interfaces.GameMode;
 
@@ -42,9 +41,7 @@ public class MessageHandler {
         return startMessage + data.state.getCommandList();
     };
 
-    @VisibleForTesting
     public GameMode getGame () { return data.gameList.get(data.gameIndex); }
 
-    @VisibleForTesting
     public MessageHandlerData getData() { return data; }
 }
