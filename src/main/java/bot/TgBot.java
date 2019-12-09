@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class TgBot extends TelegramLongPollingBot {
-    private MessageHandler handler = new MessageHandler();
     private String name;
     private String token;
 
@@ -28,29 +27,26 @@ public class TgBot extends TelegramLongPollingBot {
     }
 
     @Override
-    public String getBotUsername() {
-        return name;
-        //возвращаем юзера
-    }
-
-    @Override
     public void onUpdateReceived(Update e) {
         var message = e.getMessage();
+        var chatId = message.getChatId();
+        var userInfo = UserManager.getUserInfo(chatId);
+        var text = message.getText();
         var sendMessage = new SendMessage();
-        sendMessage.setChatId(message.getChatId());
-        sendMessage.setText(handler.handleMessage(message.getText()));
+        sendMessage.setChatId(chatId);
+        sendMessage.setText(CommandManager.getCommand(CommandManager.getCommands(userInfo.state), text).exec(text, userInfo));
         try {
             execute(sendMessage);
         } catch (TelegramApiException err){
+            System.out.println("Ошибка при отправке ответа:");
             err.printStackTrace();
         }
-        // t.me/qu12bot
     }
 
     @Override
-    public String getBotToken() {
-        return token;
-        //Токен бота
-    }
+    public String getBotToken() { return token; }
+
+    @Override
+    public String getBotUsername() { return name; }
 
 }

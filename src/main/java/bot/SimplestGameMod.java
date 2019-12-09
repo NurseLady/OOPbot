@@ -1,56 +1,49 @@
 package bot;
 
-import dataClasses.CustomGameData;
-import interfaces.GameMode;
-import interfaces.QuestionsGenerator;
-
-import static bot.StringConstants.*;
+import bot.dataClasses.CustomGameData;
+import bot.interfaces.GameMode;
+import bot.interfaces.QuestionsGenerator;
 
 public class SimplestGameMod implements GameMode {
+    private static int lastID = -1;
     private QuestionsGenerator generator;
-    private Question quest;
-    private int ID = 0;
-    private String name = "Default Simplest Game";
+    private int ID;
+    private String name;
 
-    public  SimplestGameMod(QuestionsGenerator generator){ this.generator = generator; }
-
-    public  SimplestGameMod(int ID, QuestionsGenerator generator, String gameName){
+    public SimplestGameMod(QuestionsGenerator generator, String name){
         this.generator = generator;
-        this.ID = ID;
-        name = gameName;
+        this.ID = ++lastID;
+        this.name = name;
     }
 
-    public SimplestGameMod(int ID, boolean isRandomOrder, CustomGameData gameData, String gameName) {
-        this.ID = ID;
+    public SimplestGameMod(boolean isRandomOrder, CustomGameData gameData, String name) {
+        this.ID = ++lastID;
         generator = new CustomQuestionGenerator(isRandomOrder, gameData);
-        name = gameName;
+        this.name = name;
     }
 
     @Override
-    public String getQuestion() {
-        quest = generator.generateQuestion();
-        return quest.toString();
+    public Question getQuestion() {
+        return generator.generateQuestion();
     }
 
     @Override
-    public String checkUserAnswer(String message) {
+    public boolean checkUserAnswer(String message, int ans) {
         try {
-            if (Integer.parseInt(message) == quest.correctAnswerIndex + 1) {
-                return correctAnswerMessage + this.Skip();
+            if (Integer.parseInt(message) == ans + 1) {
+                return true;
             }
-        } catch (Exception er) { }
+        } catch (Exception ignored) { }
 
-        return incorrectAnswerMessage;
+        return false;
     }
 
     @Override
-    public String Skip() { return skipMessage + this.getQuestion(); }
-
-    public Question getQuest() { return quest; }
-
-    @Override
-    public String getGameName() { return name; }
+    public Question Skip() { return this.getQuestion(); }
 
     @Override
     public int getGameID() { return ID; }
+
+    @Override
+    public String getName() { return name; }
 }

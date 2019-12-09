@@ -1,6 +1,6 @@
 package bot;
 
-import interfaces.DataBaseConnector;
+import bot.interfaces.DataBaseConnector;
 
 import java.io.*;
 
@@ -18,7 +18,7 @@ public class FileSystemConnector implements DataBaseConnector {
             //закрываем поток и освобождаем ресурсы
             objectOutputStream.close();
             return true;
-        } catch (Throwable e){
+        } catch (Exception e){
             System.out.println(errMessage + e.toString());
             return false;
         }

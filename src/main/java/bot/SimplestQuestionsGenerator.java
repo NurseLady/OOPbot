@@ -1,7 +1,8 @@
 package bot;
 
-import interfaces.QuestionsGenerator;
-import java.util.*;
+import bot.interfaces.QuestionsGenerator;
+
+import java.util.Random;
 
 public class SimplestQuestionsGenerator implements QuestionsGenerator {
     private final String question = "Угадай моё чиселко";

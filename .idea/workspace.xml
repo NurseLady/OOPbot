@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3f7dec3-d1f7-4968-a8e0-96ef2f92d484" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_android_support_support_annotations_28_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_28_1_jre.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_28_0_jre.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_mojo_animal_sniffer_annotations_1_18.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_mojo_animal_sniffer_annotations_1_17.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOPbot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OOPbot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bot/MessageHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/MessageHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bot/SimplestGameMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/SimplestGameMod.java" afterDir="false" />
-    </list>
+    <list default="true" id="bd164bfc-255c-405b-a2ea-b98400fdfb31" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,53 +11,26 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
-      </MavenGeneralSettings>
-    </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="jdkForImporter" value="12" />
-        <option name="vmOptionsForImporter" value="-Xmx768m" />
-      </MavenImportingSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="1TQAfWOzIdOr8jvgUyNZ5lAnDVR" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1UiX8Omuolq4b7WPQanCfCWLkX2" />
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="extract.method.default.visibility" value="private" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/bot" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sveta\OneDrive\Рабочий стол\OOPbot\src\main\java\bot" />
     </key>
-  </component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="mvn clean install" />
-    </option>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="bot" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="bot" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -80,103 +44,21 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TgBotStarter">
-    <configuration name="TgBotStarter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="bot.TgBotStarter" />
-      <module name="OOPbot" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="bot.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="All in OOPbot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="OOPbot" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MessageHandlerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="OOPbot" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MessageHandlerTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MessageHandlerTests.MessageHandler_setCorrectGameIndex_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="OOPbot" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MessageHandlerTests" />
-      <option name="METHOD_NAME" value="MessageHandler_setCorrectGameIndex_test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MessageHandlerTests.MessageHandler_startGameMessage_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="OOPbot" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MessageHandlerTests" />
-      <option name="METHOD_NAME" value="MessageHandler_startGameMessage_test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.TgBotStarter" />
-        <item itemvalue="JUnit.All in OOPbot" />
-        <item itemvalue="JUnit.MessageHandlerTests" />
-        <item itemvalue="JUnit.MessageHandlerTests.MessageHandler_setCorrectGameIndex_test" />
-        <item itemvalue="JUnit.MessageHandlerTests.MessageHandler_startGameMessage_test" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a3f7dec3-d1f7-4968-a8e0-96ef2f92d484" name="Default Changelist" comment="" />
-      <created>1573382048611</created>
+      <changelist id="bd164bfc-255c-405b-a2ea-b98400fdfb31" name="Default Changelist" comment="" />
+      <created>1575840231142</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1573382048611</updated>
-      <workItem from="1573382050087" duration="60937000" />
-      <workItem from="1573707774365" duration="18779000" />
-      <workItem from="1574051959908" duration="4055000" />
-      <workItem from="1574585315964" duration="6254000" />
-      <workItem from="1574807056484" duration="1875000" />
-      <workItem from="1575221958248" duration="16245000" />
+      <updated>1575840231142</updated>
+      <workItem from="1575840241331" duration="16205000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

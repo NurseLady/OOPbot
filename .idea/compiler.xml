@@ -9,8 +9,5 @@
         <module name="OOPbot" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="OOPbot" target="10" />
-    </bytecodeTargetLevel>
   </component>
 </project>
