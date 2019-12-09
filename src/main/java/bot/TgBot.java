@@ -34,7 +34,7 @@ public class TgBot extends TelegramLongPollingBot {
         var text = message.getText();
         var sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
-        sendMessage.setText(CommandManager.getCommand(CommandManager.getCommands(userInfo.state), text).exec(text, userInfo));
+        sendMessage.setText(CommandManager.getCommand(CommandManager.getStateCommands(userInfo.state), text).exec(text, userInfo));
         try {
             execute(sendMessage);
         } catch (TelegramApiException err){

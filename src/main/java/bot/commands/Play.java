@@ -15,6 +15,6 @@ public class Play extends Command {
         userInfo.state = "game";
         var question = GameManager.getGame(userInfo.gameKey).getQuestion();
         userInfo.serviceCommandsInformation = String.valueOf(question.correctAnswerIndex);
-        return gameStartMessage + CommandManager.getCommandList(message) + question;
+        return gameStartMessage + CommandManager.getCommandList(userInfo.state) + question;
     }
 }

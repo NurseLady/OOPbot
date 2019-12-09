@@ -22,7 +22,7 @@ public class GameManager {
     public static String getGamesList(){
         StringBuilder result = new StringBuilder();
         for (var i : games.keySet())
-            result.append(++i).append(". ").append(games.get(i)).append("\n");
+            result.append(i).append(". ").append(games.get(i).getName()).append("\n");
 
         if (result.length() > 0)
             result.insert(0, "Режимы игры: \n");

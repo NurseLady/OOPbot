@@ -14,7 +14,7 @@ public class SetGame extends Command {
     @Override
     public String exec(String message, UserInfo userInfo) {
         try {
-            var i = Integer.parseInt(message);
+            int i = Integer.parseInt(message);
             if (GameManager.getGames().containsKey(i)){
                 userInfo.state = "menu";
                 userInfo.gameKey = i;

@@ -14,19 +14,19 @@ public class CommandManager {
                 add(new Play("y"));
                 add(new SelectGame("s"));
                 add(new CreateNewGame("c"));
-                add(new CheckAnswer("default"));
+                add(new Unknown("default"));
                 add(new Start("/start"));
             }});
         states.put("game", new HashSet<>() {{
                 add(new FinishGame("f"));
                 add(new SkipQuestion("n"));
-                add(new Unknown("default"));
+                add(new CheckAnswer("default"));
                 add(new Start("/start"));
             }});
         states.put("select", new HashSet<>(){{
-            add(new SetGame("default"));
-            add(new Start("/start"));
-        }});
+                add(new SetGame("default"));
+                add(new Start("/start"));
+            }});
     }
 
     public static HashMap<String, HashSet<Command>> getStates(){
@@ -36,7 +36,7 @@ public class CommandManager {
     public static String getCommandList(String state){
         StringBuilder result = new StringBuilder();
         for (var command : states.get(state))
-            if (!command.equals("unknown") && !command.equals("/start"))
+            if (!command.name.equals("default") && !command.name.equals("/start"))
                 result.append("    - ").append(command.toString()).append("\n");
 
         if (result.length() > 0)
@@ -45,8 +45,8 @@ public class CommandManager {
         return result.append("\n").toString();
     }
 
-    public static HashSet<Command> getCommands(String state){
-        return getStates().get(state);
+    public static HashSet<Command> getStateCommands(String state){
+        return states.get(state);
     }
 
     public static Command getCommand(Collection<Command> commands, String message) {
@@ -59,8 +59,13 @@ public class CommandManager {
                 return command;
             }
         }
-        if (commandName.equals("/start"))
-            return new Start("Начало");
-        return new Unknown("Unknown");
+
+        for (Command command : commands) {
+            if (command.name.equals("default")){
+                return command;
+            }
+        }
+
+        return new Start("/start");
     }
 }

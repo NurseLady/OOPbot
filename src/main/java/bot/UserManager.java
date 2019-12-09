@@ -8,12 +8,19 @@ public class UserManager {
     private static HashMap<Long, UserInfo> users = new HashMap<>();
 
     public static UserInfo getUserInfo(Long userId){
+        UserInfo result;
         try{
-            return users.get(userId);
+            result = users.get(userId);
+            if (result == null){
+                users.put(userId, new UserInfo());
+                result = users.get(userId);
+            }
         }
         catch (Exception ignored){
             users.put(userId, new UserInfo());
-            return users.get(userId);
+            result = users.get(userId);
         }
+
+        return result;
     }
 }
