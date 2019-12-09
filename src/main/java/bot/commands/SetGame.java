@@ -9,7 +9,7 @@ import static bot.StringConstants.changeGameModMessage;
 import static bot.StringConstants.incorrectInputMessage;
 
 public class SetGame extends Command {
-    public SetGame(String name) { super(name); }
+    public SetGame(String name) { super(name, ""); }
 
     @Override
     public String exec(String message, UserInfo userInfo) {

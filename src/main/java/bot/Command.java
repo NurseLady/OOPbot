@@ -5,9 +5,11 @@ import bot.dataClasses.UserInfo;
 public abstract class Command {
 
     public final String name;
+    public final String description;
 
-    public Command(String name){
+    public Command(String name, String description){
         this.name = name;
+        this.description = description;
     }
 
     /**
@@ -25,7 +27,7 @@ public abstract class Command {
 
     @Override
     public String toString() {
-        return String.format(this.name);
+        return String.format("%s - %s", this.name, this.description);
     }
 
     /**

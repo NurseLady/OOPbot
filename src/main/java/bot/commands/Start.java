@@ -6,7 +6,7 @@ import bot.StringConstants;
 import bot.dataClasses.UserInfo;
 
 public class Start extends Command {
-    public Start(String name) { super(name); }
+    public Start(String name) { super(name, ""); }
 
     @Override
     public String exec(String message, UserInfo userInfo) {

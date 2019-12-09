@@ -37,7 +37,7 @@ public class CommandManager {
         StringBuilder result = new StringBuilder();
         for (var command : states.get(state))
             if (!command.name.equals("default") && !command.name.equals("/start"))
-                result.append("    - ").append(command.toString()).append("\n");
+                result.append(command.toString()).append("\n");
 
         if (result.length() > 0)
             result.insert(0, "Комманды: \n");

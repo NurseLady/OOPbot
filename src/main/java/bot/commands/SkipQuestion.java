@@ -5,7 +5,7 @@ import bot.GameManager;
 import bot.dataClasses.UserInfo;
 
 public class SkipQuestion extends Command {
-    public SkipQuestion(String name) { super(name); }
+    public SkipQuestion(String name) { super(name, "Пропустить вопрос"); }
 
     @Override
     public String exec(String message, UserInfo userInfo) {

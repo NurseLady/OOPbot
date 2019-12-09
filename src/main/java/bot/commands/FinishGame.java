@@ -6,7 +6,7 @@ import bot.StringConstants;
 import bot.dataClasses.UserInfo;
 
 public class FinishGame extends Command {
-    public FinishGame(String name) { super(name); }
+    public FinishGame(String name) { super(name, "Закончить игру"); }
 
     @Override
     public String exec(String message, UserInfo userInfo) {

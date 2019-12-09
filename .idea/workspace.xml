@@ -2,20 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd164bfc-255c-405b-a2ea-b98400fdfb31" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bot/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/Command.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bot/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/CommandManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bot/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bot/StringConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/StringConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bot/TgBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/TgBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bot/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/UserManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bot/commands/CheckAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/commands/CheckAnswer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bot/commands/CreateNewGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/commands/CreateNewGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bot/commands/FinishGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/commands/FinishGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bot/commands/Play.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/commands/Play.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bot/commands/SelectGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/commands/SelectGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bot/commands/SetGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/commands/SetGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bot/commands/SkipQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/commands/SkipQuestion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bot/commands/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/commands/Start.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bot/commands/Unknown.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/commands/Unknown.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bot/dataClasses/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/dataClasses/UserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MessageHandlerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MessageHandlerTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/QuestionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/QuestionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/SimplestGameModTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SimplestGameModTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestQuestionGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestQuestionGenerator.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +93,7 @@
       <updated>1575840231142</updated>
       <workItem from="1575840241331" duration="16205000" />
       <workItem from="1575865262018" duration="959000" />
-      <workItem from="1575866355330" duration="3010000" />
+      <workItem from="1575866355330" duration="7657000" />
     </task>
     <servers />
   </component>
@@ -113,5 +112,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/bot/TgBot.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

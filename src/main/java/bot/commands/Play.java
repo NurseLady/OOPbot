@@ -8,7 +8,7 @@ import bot.dataClasses.UserInfo;
 import static bot.StringConstants.gameStartMessage;
 
 public class Play extends Command {
-    public Play(String name) { super(name); }
+    public Play(String name) { super(name, "Играть"); }
 
     @Override
     public String exec(String message, UserInfo userInfo) {

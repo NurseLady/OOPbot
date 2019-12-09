@@ -6,7 +6,7 @@ import bot.GameManager;
 import bot.dataClasses.UserInfo;
 
 public class SelectGame extends Command {
-    public SelectGame(String name) { super(name); }
+    public SelectGame(String name) { super(name, "Выбрать режим игры"); }
 
     @Override
     public String exec(String message, UserInfo userInfo) {
