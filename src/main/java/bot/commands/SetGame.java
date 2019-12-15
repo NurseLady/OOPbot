@@ -18,8 +18,7 @@ public class SetGame extends Command {
             if (GameManager.getGames().containsKey(i)){
                 userInfo.state = "menu";
                 userInfo.gameKey = i;
-                manager.sendMessageWithKeyboard(userInfo.state, changeGameModMessage + userInfo.gameKey + "\n\n" +
-                        CommandManager.getCommandList("menu"), userInfo.ID);
+                manager.sendMessageWithKeyboard(userInfo.state, changeGameModMessage + userInfo.gameKey, userInfo.ID);
                 return;
             }
 

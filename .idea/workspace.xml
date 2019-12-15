@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd0ad5b4-0d4f-420d-9c79-efd8b1f6f7a1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/bot/commands/SendQuestion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bot/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bot/TgBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/TgBot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bot/TgManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/TgManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bot/commands/FinishGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/commands/FinishGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bot/commands/Play.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/commands/Play.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bot/commands/SelectGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/commands/SelectGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bot/commands/SetGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/commands/SetGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bot/commands/SkipQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/commands/SkipQuestion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bot/commands/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/commands/Start.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,7 +77,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576354298086</updated>
-      <workItem from="1576354301691" duration="7053000" />
+      <workItem from="1576354301691" duration="11306000" />
     </task>
     <servers />
   </component>

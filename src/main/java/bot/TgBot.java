@@ -2,6 +2,7 @@ package bot;
 
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
@@ -28,10 +29,21 @@ public class TgBot extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update e) {
-        var message = e.getMessage();
+        Message message = null;
+        String text = null;
+        if (e.hasMessage()) {
+            if(e.getMessage().hasText()){
+                message = e.getMessage();
+                text = message.getText();
+            }
+        } else if (e.hasCallbackQuery()) {
+            var query = e.getCallbackQuery();
+            message = query.getMessage();
+            text = query.getData();
+        }
+
         var chatId = message.getChatId();
         var userInfo = UserManager.getUserInfo(chatId);
-        var text = message.getText();
         CommandManager.getCommand(CommandManager.getStateCommands(userInfo.state), text).exec(text, userInfo);
     }
 

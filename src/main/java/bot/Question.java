@@ -6,8 +6,8 @@ public class Question implements Serializable {
     private static final long serialVersionUID = 1L;
     private static int lastID = -1;
     public final int ID;
-    private String question;
-    private String[] answers;
+    public String question;
+    public String[] answers;
     public int correctAnswerIndex;
 
     public Question(String question, String[] answers, int correctAnswerIndex){

@@ -13,9 +13,7 @@ public class Play extends Command {
     @Override
     public void exec(String message, UserInfo userInfo) {
         userInfo.state = "game";
-        var question = GameManager.getGame(userInfo.gameKey).getQuestion();
-        userInfo.serviceCommandsInformation = String.valueOf(question.correctAnswerIndex);
-        manager.sendMessageWithKeyboard(userInfo.state,
-                gameStartMessage + CommandManager.getCommandList(userInfo.state) + question, userInfo.ID);
+        manager.sendMessageWithKeyboard(userInfo.state, gameStartMessage, userInfo.ID);
+        new SendQuestion().exec("", userInfo);
     }
 }
