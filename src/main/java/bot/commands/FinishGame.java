@@ -11,7 +11,7 @@ public class FinishGame extends Command {
     @Override
     public void exec(String message, UserInfo userInfo) {
         userInfo.state = "menu";
-        manager.sendMessage(StringConstants.gameEndMessage + CommandManager.getCommandList("menu"), userInfo.ID);
-        manager.sendKeyboard(userInfo.ID);
+        manager.sendMessageWithKeyboard(userInfo.state,
+                StringConstants.gameEndMessage + CommandManager.getCommandList("menu"), userInfo.ID);
     }
 }

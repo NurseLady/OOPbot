@@ -11,7 +11,7 @@ public class SelectGame extends Command {
     @Override
     public void exec(String message, UserInfo userInfo) {
         userInfo.state = "select";
-        manager.sendMessage(CommandManager.getCommandList("select") + GameManager.getGamesList(), userInfo.ID);
-        manager.sendKeyboard(userInfo.ID);
+        manager.sendMessageWithKeyboard(userInfo.state,
+                CommandManager.getCommandList("select") + GameManager.getGamesList(), userInfo.ID);
     }
 }

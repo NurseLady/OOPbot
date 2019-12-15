@@ -11,7 +11,6 @@ public class Start extends Command {
     @Override
     public void exec(String message, UserInfo userInfo) {
         userInfo.state = "menu";
-        manager.sendMessage(StringConstants.startMessage + CommandManager.getCommandList("menu"), userInfo.ID);
-        manager.sendKeyboard(userInfo.ID);
+        manager.sendMessageWithKeyboard(userInfo.state, StringConstants.startMessage + CommandManager.getCommandList("menu"), userInfo.ID);
     }
 }
