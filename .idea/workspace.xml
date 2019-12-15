@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd0ad5b4-0d4f-420d-9c79-efd8b1f6f7a1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/bot/SQLiteConnector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bot/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/CommandManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bot/FileSystemConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/FileSystemConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bot/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bot/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/UserManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bot/TgManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/TgManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bot/commands/CheckAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/commands/CheckAnswer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bot/commands/FinishGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/commands/FinishGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bot/commands/Play.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/commands/Play.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bot/commands/SelectGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/commands/SelectGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bot/commands/SendQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/commands/SendQuestion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bot/commands/SetGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/commands/SetGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bot/commands/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/commands/Start.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bot/dataClasses/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/dataClasses/UserInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bot/interfaces/DataBaseConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/interfaces/DataBaseConnector.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,6 +16,20 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -34,8 +43,11 @@
   </component>
   <component name="ProjectId" id="1UzL6ANlrIOmqivsQfQZR9LKAXx" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="sqlite.xerial&#10;sqlite" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/OneDrive/Рабочий стол/OOPbot-task3" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -69,6 +81,26 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@b8852e4e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@b8852e4e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@5fc87457" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -79,7 +111,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576354298086</updated>
-      <workItem from="1576354301691" duration="16787000" />
+      <workItem from="1576354301691" duration="30411000" />
     </task>
     <servers />
   </component>
@@ -101,9 +133,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/bot/FileSystemConnector.java</url>
-          <line>73</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/src/main/java/bot/SQLiteConnector.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/bot/SQLiteConnector.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

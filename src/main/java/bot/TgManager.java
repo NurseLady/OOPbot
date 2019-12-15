@@ -1,12 +1,14 @@
 package bot;
 
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -70,6 +72,17 @@ public class TgManager extends TgBot{
             execute(sendMessage);
         } catch (TelegramApiException err){
             System.out.println("Ошибка при отправке ответа с инлайн-клавиатурой:");
+            err.printStackTrace();
+        }
+    }
+
+    public void sendPhoto(File picture, long chatId){
+        var sendPhoto = new SendPhoto();
+        sendPhoto.setChatId(chatId).setPhoto(picture);
+        try {
+            execute(sendPhoto);
+        } catch (TelegramApiException err) {
+            System.out.println("Ошибка при отправке картиночки:");
             err.printStackTrace();
         }
     }

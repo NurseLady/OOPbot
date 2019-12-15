@@ -54,21 +54,6 @@ public class FileSystemConnector implements DataBaseConnector {
         return false;
     }
 
-    @Override
-    public boolean writeGame() {
-        return false;
-    }
-
-    @Override
-    public CustomGameData readGame(int gameID) {
-        return null;
-    }
-
-    @Override
-    public boolean deleteGame(int gameID) {
-        return false;
-    }
-
     public boolean writeUser(UserInfo userInfo) {
         try {
             FileOutputStream outputStream = new FileOutputStream("questions/" + userInfo.ID +"_user.ser");
@@ -101,17 +86,5 @@ public class FileSystemConnector implements DataBaseConnector {
         }
 
         return userInfo;
-    }
-
-    @Override
-    public boolean deleteUser(long userID) {
-        File file = new File("questions/" + userID +"_user.ser");
-
-        if(file.delete()) {
-            System.out.println("questions/" + userID +"_user.ser файл удален");
-            return true;
-        }
-        System.out.println("Файла questions/" + userID + "_user.ser не обнаружено");
-        return false;
     }
 }
