@@ -8,7 +8,7 @@ public class Unknown extends Command {
     public Unknown(String name) { super(name, ""); }
 
     @Override
-    public String exec(String message, UserInfo userInfo) {
-        return StringConstants.incorrectInputMessage;
+    public void exec(String message, UserInfo userInfo) {
+        manager.sendMessage(StringConstants.incorrectInputMessage, userInfo.ID);
     }
 }

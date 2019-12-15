@@ -11,10 +11,11 @@ public class Play extends Command {
     public Play(String name) { super(name, "Играть"); }
 
     @Override
-    public String exec(String message, UserInfo userInfo) {
+    public void exec(String message, UserInfo userInfo) {
         userInfo.state = "game";
         var question = GameManager.getGame(userInfo.gameKey).getQuestion();
         userInfo.serviceCommandsInformation = String.valueOf(question.correctAnswerIndex);
-        return gameStartMessage + CommandManager.getCommandList(userInfo.state) + question;
+        manager.sendMessage(gameStartMessage + CommandManager.getCommandList(userInfo.state) + question, userInfo.ID);
+        manager.sendKeyboard(userInfo.ID);
     }
 }

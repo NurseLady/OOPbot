@@ -3,7 +3,7 @@ package bot;
 import bot.dataClasses.UserInfo;
 
 public abstract class Command {
-
+    protected static TgManager manager = new TgManager();
     public final String name;
     public final String description;
 
@@ -16,7 +16,7 @@ public abstract class Command {
      * Метод, который будет вызываться для исполнения команды
      * @param message сообщение пользователя
      */
-    public abstract String exec(String message, UserInfo userInfo);
+    public abstract void exec(String message, UserInfo userInfo);
 
     /**
      * Возвращает строку в формате:<br>

@@ -8,10 +8,10 @@ public class SkipQuestion extends Command {
     public SkipQuestion(String name) { super(name, "Пропустить вопрос"); }
 
     @Override
-    public String exec(String message, UserInfo userInfo) {
+    public void exec(String message, UserInfo userInfo) {
 
         var question = GameManager.getGame(userInfo.gameKey).Skip();
         userInfo.serviceCommandsInformation = String.valueOf(question.correctAnswerIndex);
-        return question.toString();
+        manager.sendMessage(question.toString(), userInfo.ID);
     }
 }

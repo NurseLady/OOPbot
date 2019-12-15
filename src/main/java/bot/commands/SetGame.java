@@ -12,18 +12,20 @@ public class SetGame extends Command {
     public SetGame(String name) { super(name, ""); }
 
     @Override
-    public String exec(String message, UserInfo userInfo) {
+    public void exec(String message, UserInfo userInfo) {
         try {
             int i = Integer.parseInt(message);
             if (GameManager.getGames().containsKey(i)){
                 userInfo.state = "menu";
                 userInfo.gameKey = i;
-                return changeGameModMessage + userInfo.gameKey + "\n\n" +
-                        CommandManager.getCommandList("menu");
+                manager.sendMessage(changeGameModMessage + userInfo.gameKey + "\n\n" +
+                        CommandManager.getCommandList("menu"), userInfo.ID);
+                manager.sendKeyboard(userInfo.ID);
+                return;
             }
 
         } catch (Exception ignored){ }
 
-        return incorrectInputMessage;
+        manager.sendMessage(incorrectInputMessage, userInfo.ID);
     }
 }

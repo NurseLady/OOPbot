@@ -9,8 +9,9 @@ public class Start extends Command {
     public Start(String name) { super(name, ""); }
 
     @Override
-    public String exec(String message, UserInfo userInfo) {
+    public void exec(String message, UserInfo userInfo) {
         userInfo.state = "menu";
-        return StringConstants.startMessage + CommandManager.getCommandList("menu");
+        manager.sendMessage(StringConstants.startMessage + CommandManager.getCommandList("menu"), userInfo.ID);
+        manager.sendKeyboard(userInfo.ID);
     }
 }

@@ -12,12 +12,12 @@ public class UserManager {
         try{
             result = users.get(userId);
             if (result == null){
-                users.put(userId, new UserInfo());
+                users.put(userId, new UserInfo(userId));
                 result = users.get(userId);
             }
         }
         catch (Exception ignored){
-            users.put(userId, new UserInfo());
+            users.put(userId, new UserInfo(userId));
             result = users.get(userId);
         }
 

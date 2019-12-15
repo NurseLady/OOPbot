@@ -9,8 +9,9 @@ public class SelectGame extends Command {
     public SelectGame(String name) { super(name, "Выбрать режим игры"); }
 
     @Override
-    public String exec(String message, UserInfo userInfo) {
+    public void exec(String message, UserInfo userInfo) {
         userInfo.state = "select";
-        return CommandManager.getCommandList("select") + GameManager.getGamesList();
+        manager.sendMessage(CommandManager.getCommandList("select") + GameManager.getGamesList(), userInfo.ID);
+        manager.sendKeyboard(userInfo.ID);
     }
 }

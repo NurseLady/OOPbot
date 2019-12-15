@@ -7,7 +7,7 @@ public class CreateNewGame extends Command {
     public CreateNewGame(String name) { super(name, "Создать новый режим [Disabled]"); }
 
     @Override
-    public String exec(String message, UserInfo userInfo) {
-        return "Пока в разработке :(";
+    public void exec(String message, UserInfo userInfo) {
+        manager.sendMessage("Пока в разработке :(", userInfo.ID);
     }
 }

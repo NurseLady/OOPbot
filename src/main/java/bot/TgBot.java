@@ -10,10 +10,10 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class TgBot extends TelegramLongPollingBot {
-    private String name;
-    private String token;
+    private static String name;
+    private static String token;
 
-    public TgBot(){
+    static {
         try {
             Properties prop = new Properties();
             prop.load(new FileInputStream("src/main/resources/tgbotconfig.properties"));
@@ -32,15 +32,7 @@ public class TgBot extends TelegramLongPollingBot {
         var chatId = message.getChatId();
         var userInfo = UserManager.getUserInfo(chatId);
         var text = message.getText();
-        var sendMessage = new SendMessage();
-        sendMessage.setChatId(chatId);
-        sendMessage.setText(CommandManager.getCommand(CommandManager.getStateCommands(userInfo.state), text).exec(text, userInfo));
-        try {
-            execute(sendMessage);
-        } catch (TelegramApiException err){
-            System.out.println("Ошибка при отправке ответа:");
-            err.printStackTrace();
-        }
+        CommandManager.getCommand(CommandManager.getStateCommands(userInfo.state), text).exec(text, userInfo);
     }
 
     @Override

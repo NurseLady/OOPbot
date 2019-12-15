@@ -9,12 +9,14 @@ public class CheckAnswer extends Command {
     public CheckAnswer(String name) { super(name, ""); }
 
     @Override
-    public String exec(String message, UserInfo userInfo) {
+    public void exec(String message, UserInfo userInfo) {
         if (GameManager.getGame(userInfo.gameKey).checkUserAnswer(message, Integer.parseInt(userInfo.serviceCommandsInformation))){
             userInfo.score += 2;
-            return StringConstants.correctAnswerMessage + new SkipQuestion("").exec("", userInfo);
+            manager.sendMessage(StringConstants.correctAnswerMessage, userInfo.ID);
+            new SkipQuestion("").exec("", userInfo);
+            return;
         }
         userInfo.score--;
-        return StringConstants.incorrectAnswerMessage;
+        manager.sendMessage(StringConstants.incorrectAnswerMessage, userInfo.ID);
     }
 }

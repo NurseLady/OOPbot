@@ -9,8 +9,9 @@ public class FinishGame extends Command {
     public FinishGame(String name) { super(name, "Закончить игру"); }
 
     @Override
-    public String exec(String message, UserInfo userInfo) {
+    public void exec(String message, UserInfo userInfo) {
         userInfo.state = "menu";
-        return StringConstants.gameEndMessage + CommandManager.getCommandList("menu");
+        manager.sendMessage(StringConstants.gameEndMessage + CommandManager.getCommandList("menu"), userInfo.ID);
+        manager.sendKeyboard(userInfo.ID);
     }
 }
