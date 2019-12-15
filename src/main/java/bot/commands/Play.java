@@ -3,6 +3,7 @@ package bot.commands;
 import bot.Command;
 import bot.GameManager;
 import bot.CommandManager;
+import bot.UserManager;
 import bot.dataClasses.UserInfo;
 
 import static bot.StringConstants.gameStartMessage;
@@ -15,5 +16,6 @@ public class Play extends Command {
         userInfo.state = "game";
         manager.sendMessageWithKeyboard(userInfo.state, gameStartMessage, userInfo.ID);
         new SendQuestion().exec("", userInfo);
+        UserManager.updateUserSave(userInfo);
     }
 }

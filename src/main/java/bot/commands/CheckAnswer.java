@@ -3,6 +3,7 @@ package bot.commands;
 import bot.Command;
 import bot.GameManager;
 import bot.StringConstants;
+import bot.UserManager;
 import bot.dataClasses.UserInfo;
 
 public class CheckAnswer extends Command {
@@ -18,5 +19,6 @@ public class CheckAnswer extends Command {
         }
         userInfo.score--;
         manager.sendMessage(StringConstants.incorrectAnswerMessage, userInfo.ID);
+        UserManager.updateUserSave(userInfo);
     }
 }

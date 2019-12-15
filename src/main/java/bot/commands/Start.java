@@ -3,6 +3,7 @@ package bot.commands;
 import bot.Command;
 import bot.CommandManager;
 import bot.StringConstants;
+import bot.UserManager;
 import bot.dataClasses.UserInfo;
 
 public class Start extends Command {
@@ -13,5 +14,6 @@ public class Start extends Command {
         userInfo.state = "menu";
         manager.sendMessageWithKeyboard(userInfo.state,
                 StringConstants.startMessage, userInfo.ID);
+        UserManager.updateUserSave(userInfo);
     }
 }

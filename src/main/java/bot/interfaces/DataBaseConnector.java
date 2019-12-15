@@ -2,13 +2,24 @@ package bot.interfaces;
 
 import bot.Question;
 import bot.dataClasses.CustomGameData;
+import bot.dataClasses.UserInfo;
 
 public interface DataBaseConnector {
-    static boolean WriteQuestion(Question quest) { return false; }
+    boolean writeQuestion(Question quest);
 
-    static Question ReadQuestion(int questID) { return null; }
+    Question readQuestion(int questID);
 
-    static boolean WriteGame() { return false; }
+    boolean deleteQuestion(int questID);
 
-    static CustomGameData ReadGame(int GameID) { return null; }
+    boolean writeGame();
+
+    CustomGameData readGame(int gameID);
+
+    boolean deleteGame(int gameID);
+
+    boolean writeUser(UserInfo userInfo);
+
+    UserInfo readUser(long userID);
+
+    boolean deleteUser(long userID);
 }

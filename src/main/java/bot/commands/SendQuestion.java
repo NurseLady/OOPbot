@@ -2,6 +2,7 @@ package bot.commands;
 
 import bot.Command;
 import bot.GameManager;
+import bot.UserManager;
 import bot.dataClasses.UserInfo;
 
 import java.util.HashMap;
@@ -21,5 +22,6 @@ public class SendQuestion extends Command {
         }
 
         manager.sendMessageWithInlineKeyboard(keyboardButtons, question.question, userInfo.ID);
+        UserManager.updateUserSave(userInfo);
     }
 }

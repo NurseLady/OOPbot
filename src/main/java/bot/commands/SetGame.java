@@ -3,6 +3,7 @@ package bot.commands;
 import bot.Command;
 import bot.CommandManager;
 import bot.GameManager;
+import bot.UserManager;
 import bot.dataClasses.UserInfo;
 
 import static bot.StringConstants.changeGameModMessage;
@@ -25,5 +26,6 @@ public class SetGame extends Command {
         } catch (Exception ignored){ }
 
         manager.sendMessage(incorrectInputMessage, userInfo.ID);
+        UserManager.updateUserSave(userInfo);
     }
 }

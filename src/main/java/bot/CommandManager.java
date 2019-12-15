@@ -33,7 +33,7 @@ public class CommandManager {
         return states;
     }
 
-    public static String getCommandList(String state){
+    public static String stateToString(String state){
         StringBuilder result = new StringBuilder();
         for (var command : states.get(state))
             if (!command.name.equals("default") && !command.name.equals("/start"))

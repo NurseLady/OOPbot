@@ -19,7 +19,8 @@ public class GameManager {
         return games.get(key);
     }
 
-    public static String getGamesList(){
+    @Override
+    public String toString(){
         StringBuilder result = new StringBuilder();
         for (var i : games.keySet())
             result.append(i).append(". ").append(games.get(i).getName()).append("\n");
