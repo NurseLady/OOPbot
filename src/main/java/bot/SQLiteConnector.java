@@ -50,14 +50,6 @@ public class SQLiteConnector implements DataBaseConnector {
             preparedStatement.setString(3, bof);
             preparedStatement.setLong(4, userInfo.ID);
 
-            if (preparedStatement.executeUpdate() <= 0){
-                sql = "UPDATE users SET userInfo = ?  WHERE id = ?";
-                preparedStatement = conn.prepareStatement(sql);
-                preparedStatement.setString(1, bof);
-                preparedStatement.setLong(2, userInfo.ID);
-
-            }
-
             return true;
         } catch (Exception e){
             System.out.println(errMessage);

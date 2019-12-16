@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd0ad5b4-0d4f-420d-9c79-efd8b1f6f7a1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bot/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/UserManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bot/SQLiteConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/SQLiteConnector.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +104,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576354298086</updated>
-      <workItem from="1576354301691" duration="38330000" />
+      <workItem from="1576354301691" duration="38876000" />
     </task>
     <servers />
   </component>
