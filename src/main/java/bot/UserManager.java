@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 public class UserManager {
     private static HashMap<Long, UserInfo> users = new HashMap<>();
-    private static DataBaseConnector connector = new FileSystemConnector();
+    private static DataBaseConnector connector = new SQLiteConnector();
 
     public static UserInfo getUserInfo(Long userId){
         UserInfo result = null;
