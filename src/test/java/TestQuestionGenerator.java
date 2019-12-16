@@ -1,3 +1,4 @@
+/*
 import bot.Question;
 import interfaces.QuestionsGenerator;
 
@@ -9,4 +10,4 @@ class TestQuestionGenerator implements QuestionsGenerator {
         count++;
         return new Question(String.valueOf(count), new String[] {"a", "b", "c"}, 1);
     }
-}
+}*/

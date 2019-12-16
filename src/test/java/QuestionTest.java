@@ -1,3 +1,4 @@
+/*
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -10,3 +11,4 @@ public class QuestionTest {
         assertEquals("1\n" + "1. a\n2. b\n3. c\n", generator.generateQuestion().toString());
     }
 }
+*/

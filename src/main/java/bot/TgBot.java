@@ -2,6 +2,7 @@ package bot;
 
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
@@ -10,11 +11,10 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class TgBot extends TelegramLongPollingBot {
-    private MessageHandler handler = new MessageHandler();
-    private String name;
-    private String token;
+    private static String name;
+    private static String token;
 
-    public TgBot(){
+    static {
         try {
             Properties prop = new Properties();
             prop.load(new FileInputStream("src/main/resources/tgbotconfig.properties"));
@@ -28,29 +28,29 @@ public class TgBot extends TelegramLongPollingBot {
     }
 
     @Override
-    public String getBotUsername() {
-        return name;
-        //возвращаем юзера
-    }
-
-    @Override
     public void onUpdateReceived(Update e) {
-        var message = e.getMessage();
-        var sendMessage = new SendMessage();
-        sendMessage.setChatId(message.getChatId());
-        sendMessage.setText(handler.handleMessage(message.getText()));
-        try {
-            execute(sendMessage);
-        } catch (TelegramApiException err){
-            err.printStackTrace();
+        Message message = null;
+        String text = null;
+        if (e.hasMessage()) {
+            if(e.getMessage().hasText()){
+                message = e.getMessage();
+                text = message.getText();
+            }
+        } else if (e.hasCallbackQuery()) {
+            var query = e.getCallbackQuery();
+            message = query.getMessage();
+            text = query.getData();
         }
-        // t.me/qu12bot
+
+        var chatId = message.getChatId();
+        var userInfo = UserManager.getUserInfo(chatId);
+        CommandManager.getCommand(CommandManager.getStateCommands(userInfo.state), text).exec(text, userInfo);
     }
 
     @Override
-    public String getBotToken() {
-        return token;
-        //Токен бота
-    }
+    public String getBotToken() { return token; }
+
+    @Override
+    public String getBotUsername() { return name; }
 
 }
