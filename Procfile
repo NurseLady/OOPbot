@@ -1,1 +1,1 @@
-bot: java -jar target/OOPbot-1.0-SNAPSHOT.jar
+bot: java -jar target/tgBot-1.0-SNAPSHOT.jar
