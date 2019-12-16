@@ -53,4 +53,5 @@ crashlytics-build.properties
 fabric.properties
 
 *.ser
+tgbotconfig.properties
 
