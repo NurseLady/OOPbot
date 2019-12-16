@@ -1,5 +1,6 @@
 package bot;
 
+import org.telegram.telegrambots.meta.api.methods.AnswerCallbackQuery;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
@@ -84,6 +85,16 @@ public class TgManager extends TgBot{
         } catch (TelegramApiException err) {
             System.out.println("Ошибка при отправке картиночки:");
             err.printStackTrace();
+        }
+    }
+
+    public void simpleCallbackAnswer(String queryId) {
+        AnswerCallbackQuery answer = new AnswerCallbackQuery();
+        answer.setCallbackQueryId(queryId);
+        try {
+            execute(answer);
+        } catch (TelegramApiException e) {
+            System.out.println("Failed to answer callback query with id " + queryId );
         }
     }
 }

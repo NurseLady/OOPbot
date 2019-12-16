@@ -53,5 +53,5 @@ crashlytics-build.properties
 fabric.properties
 
 *.ser
-tgbotconfig.properties
 
+*BD1.s3db
