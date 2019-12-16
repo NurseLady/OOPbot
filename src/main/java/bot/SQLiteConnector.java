@@ -49,7 +49,7 @@ public class SQLiteConnector implements DataBaseConnector {
             preparedStatement.setString(2, bof);
             preparedStatement.setString(3, bof);
             preparedStatement.setLong(4, userInfo.ID);
-
+            System.out.println("записан " + userInfo.ID);
             return true;
         } catch (Exception e){
             System.out.println(errMessage);
