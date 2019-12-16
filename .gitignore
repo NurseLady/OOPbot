@@ -53,5 +53,3 @@ crashlytics-build.properties
 fabric.properties
 
 *.ser
-
-*BD1.s3db
