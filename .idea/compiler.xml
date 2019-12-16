@@ -6,11 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="OOPbot" />
+        <module name="tgBot" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="OOPbot" target="10" />
-    </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,205 +1,58 @@
 package bot;
 
-import dataClasses.MessageHandlerData;
+import bot.dataClasses.UserInfo;
 
-import static bot.StringConstants.*;
+public abstract class Command {
+    protected static TgManager manager = new TgManager();
+    public final String name;
+    public final String description;
 
+    public Command(String name, String description){
+        this.name = name;
+        this.description = description;
+    }
 
-interface CommandEnum {
-    MessageHandlerData execute(MessageHandlerData data);
-    String getCommandName();
-}
+    /**
+     * Метод, который будет вызываться для исполнения команды
+     * @param message сообщение пользователя
+     */
+    public abstract void exec(String message, UserInfo userInfo);
 
-public enum Command implements CommandEnum {
-    StartGame{
-        private String name = "Играть";
+    /**
+     * Возвращает строку в формате:<br>
+     * name: имяКоманды<br>
+     *
+     * @return форматированное имя и мод команды
+     */
 
-        @Override
-        public MessageHandlerData execute(MessageHandlerData data) {
-            var d = data.clone();
-            d.state = State.GAME;
-            d.message = gameStartMessage + d.state.getCommandList() + d.gameList.get(data.gameIndex).getQuestion();
-            return d;
-        }
+    @Override
+    public String toString() {
+        return String.format("%s - %s", this.name, this.description);
+    }
 
-        @Override
-        public String getCommandName() {
-            return name;
-        }
+    /**
+     * Берет хэш-код значащего поля {@link #name}
+     *
+     * @return хэш-код команды
+     */
+    @Override
+    public int hashCode() {
+        return this.name.hashCode();
+    }
 
-    },
-    CreateNewGame{
-        private String name = "Создать новый режим [Disable]";
-        @Override
-        public MessageHandlerData execute(MessageHandlerData data) {
-            var d = data.clone();
-            d.message = "Пока в разработке :(";
-            return d;
-        }
-
-        @Override
-        public String getCommandName() {
-            return name;
-        }
-    },
-    SelectGame{
-        private String name = "Выбрать режим игры";
-
-        @Override
-        public MessageHandlerData execute(MessageHandlerData data) {
-            StringBuilder result = new StringBuilder("Выбери режим: \n\n");
-            var d = data.clone();
-
-            for (var i = 1; i <= d.gameList.size(); i++)
-                result.append(i).append(". ").append(d.gameList.get(i - 1).getGameName()).append("\n");
-
-            d.state = State.SELECT;
-            d.message = d.state.getCommandList() + result.toString();
-            return d;
-        }
-
-        @Override
-        public String getCommandName() {
-            return name;
-        }
-    },
-    HandleIncorrectMessage{
-        @Override
-        public MessageHandlerData execute(MessageHandlerData data) {
-            var d = data.clone();
-            d.message = incorrectInputMessage;
-            return d;
-        }
-
-        @Override
-        public String getCommandName() {
-            return null;
-        }
-    },
-    FinishGame{
-        private String name = "Закончить игру";
-
-        @Override
-        public MessageHandlerData execute(MessageHandlerData data) {
-            var d = data.clone();
-            d.state = State.MENU;
-            d.message = gameEndMessage + d.state.getCommandList();
-            return d;
-        }
-
-        @Override
-        public String getCommandName() {
-            return name;
-        }
-    },
-    SkipQuestion{
-        private String name = "Пропустить вопрос";
-
-        @Override
-        public MessageHandlerData execute(MessageHandlerData data) {
-            var d = data.clone();
-            d.message = data.gameList.get(data.gameIndex).Skip();
-            return d;
-        }
-
-        @Override
-        public String getCommandName() {
-            return name;
-        }
-    },
-    CheckAnswer{
-        @Override
-        public MessageHandlerData execute(MessageHandlerData data) {
-            var d = data.clone();
-            d.message = data.gameList.get(data.gameIndex).checkUserAnswer(d.message);
-            return d;
-        }
-
-        @Override
-        public String getCommandName() {
-            return null;
-        }
-    },
-    HandleStartMessage{
-        @Override
-        public MessageHandlerData execute(MessageHandlerData data) {
-            var d = data.clone();
-            d.state = State.MENU;
-            d.message = new MessageHandler().getStartMessage();
-            return d;
-        }
-
-        @Override
-        public String getCommandName() {
-            return null;
-        }
-    },
-    SetGameIndex{
-        private String name;
-        @Override
-        public MessageHandlerData execute(MessageHandlerData data) {
-            var d = data.clone();
-
-            try {
-                if (Integer.parseInt(d.message) <= d.gameList.size()) {
-                    d.gameIndex = Integer.parseInt(d.message) - 1;
-                    d.state = State.MENU;
-                    d.message = changeGameModMessage + d.gameList.get(d.gameIndex).getGameName() + "\n\n" +
-                            d.state.getCommandList();
-                    return d;
-                }
-            } catch (Exception ignored) { }
-
-            d.message = incorrectInputMessage;
-            return d;
-        }
-
-        @Override
-        public String getCommandName() {
-            return name;
-        }
-    },
-    LoadQuestionText{
-        private String name = "Загрузить текст сохраненного вопроса";
-
-        @Override
-        public MessageHandlerData execute(MessageHandlerData data) {
-            var d = data.clone();
-
-            try {
-                d.message = FileSystemConnector.readQuestion(0).toString();
-            } catch (Exception e) {
-                d.message = errLoadMessage;
+    /**
+     * Объекты эквивалентны только, если поля <code>{@link #name}</code> равны
+     * имеют одинаковое значение и объект является классом-наследником {@link Command}
+     * @param obj сравниваемый объект
+     * @return {@code true} если объекты эквивалентны; {@code false} если объекты различаются
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Command){
+            if (name.equals(((Command) obj).name)){
+                return true;
             }
-
-            return d;
         }
-
-        @Override
-        public String getCommandName() {
-            return name;
-        }
-    },
-    SaveQuestion{
-        private String name = "Сохранить вопрос";
-
-        @Override
-        public MessageHandlerData execute(MessageHandlerData data) {
-            var d = data.clone();
-
-            try {
-                FileSystemConnector.writeQuestion(d.gameList.get(d.gameIndex).getQuest());
-                d.message = "Вопрос сохранен";
-            } catch (Exception e) {
-                d.message = "Ой! Что-то пошло не так!";
-            }
-
-            return d;
-        }
-
-        @Override
-        public String getCommandName() {
-            return name;
-        }
+        return false;
     }
 }

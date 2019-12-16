@@ -1,7 +1,7 @@
 package bot;
 
-import dataClasses.CustomGameData;
-import interfaces.QuestionsGenerator;
+import bot.dataClasses.CustomGameData;
+import bot.interfaces.QuestionsGenerator;
 
 import java.util.ArrayList;
 import java.util.Collections;
