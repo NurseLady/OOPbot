@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd0ad5b4-0d4f-420d-9c79-efd8b1f6f7a1" name="Default Changelist" comment="">
+    <list default="true" id="3e77528e-a834-42c3-b4d5-71f11c68e6f0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1d90c002-e941-4b3b-9db8-509526e68c88.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bot/SQLiteConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/SQLiteConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bot/FileSystemConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/FileSystemConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bot/StringConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/StringConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bot/commands/CheckAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/commands/CheckAnswer.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,43 +19,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1UzL6ANlrIOmqivsQfQZR9LKAXx" />
+  <component name="ProjectId" id="1V3PC2tRVhwsZ62McGDJ2Q9KzC4" />
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DatabaseDriversLRU" value="sqlite.xerial&#10;sqlite" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/OneDrive/Рабочий стол/OOPbot-task3" />
-    <property name="nodejs_package_manager_path" value="npm" />
-  </component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="mvn clean install" />
-    </option>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -61,57 +39,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="TgBotStarter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="bot.TgBotStarter" />
-      <module name="tgBot" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="bot.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.TgBotStarter" />
-      </list>
-    </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="allServicesViewState">
-      <serviceView>
-        <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@b8852e4e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@b8852e4e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@5fc87457" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-          </expand>
-          <select />
-        </treeState>
-      </serviceView>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="cd0ad5b4-0d4f-420d-9c79-efd8b1f6f7a1" name="Default Changelist" comment="" />
-      <created>1576354298086</created>
+      <changelist id="3e77528e-a834-42c3-b4d5-71f11c68e6f0" name="Default Changelist" comment="" />
+      <created>1576478673775</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1576354298086</updated>
-      <workItem from="1576354301691" duration="40916000" />
+      <updated>1576478673775</updated>
+      <workItem from="1576478676634" duration="420000" />
     </task>
     <servers />
   </component>

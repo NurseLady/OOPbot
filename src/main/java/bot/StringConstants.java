@@ -11,4 +11,5 @@ public class StringConstants {
     public static final String changeGameModMessage = "Игровой режим изменён на ";
     public static final String errMessage = "Упс, ошибочка вышла... ";
     public static final String errLoadMessage = "Ой! Вы ничего не сохраняли, либо произошла ошибка!";
+    public static final String separator = System.getProperty("file.separator");
 }
