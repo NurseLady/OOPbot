@@ -1,10 +1,8 @@
 package bot;
 
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
-import org.telegram.telegrambots.meta.api.methods.AnswerCallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
-import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 
 import java.io.FileInputStream;
@@ -18,7 +16,10 @@ public class TgBot extends TelegramLongPollingBot {
     static {
         try {
             Properties prop = new Properties();
-            prop.load(new FileInputStream("src/main/resources/tgbotconfig.properties"));
+            prop.load(new FileInputStream("src" + StringConstants.separator +
+                    "main" + StringConstants.separator +
+                    "resources" + StringConstants.separator +
+                    "tgbotconfig.properties"));
             name = prop.getProperty("name");
             token = prop.getProperty("token");
 
