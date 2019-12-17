@@ -40,6 +40,7 @@
 Прочитать о том как это сделать можно здесь:
 - https://devcenter.heroku.com/articles/heroku-postgresql
 - https://devcenter.heroku.com/articles/connecting-to-relational-databases-on-heroku-with-java
+
 Если база уже готова, больше ничего делать не нужно, всё остальное уже сделано для вас.
 3. Для тех, кто не хочет по какой-то причине использовать PostgreSQL, осталась поддержка
  сохранения данных в файловую систему. Для того чтобы использовать её, требуется заменить 
