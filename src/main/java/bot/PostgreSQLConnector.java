@@ -22,6 +22,7 @@ public class PostgreSQLConnector implements DataBaseConnector {
             String username = dbUri.getUserInfo().split(":")[0];
             String password = dbUri.getUserInfo().split(":")[1];
             String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
+            System.out.println(dbUrl);
 
             conn = DriverManager.getConnection(dbUrl, username, password);
             System.out.println("База Подключена!");
@@ -46,14 +47,18 @@ public class PostgreSQLConnector implements DataBaseConnector {
 
             String bof = Base64.getEncoder().encodeToString(byteArray);
 
-            String sql = "INSERT INTO users (id, userInfo) VALUES (?, ?)" +
-                    "ON CONFLICT(id)" +
-                    "DO UPDATE SET userInfo = ?  WHERE id = ?;";
+            String sql = "INSERT INTO users (id, userInfo) VALUES (?, ?);";
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
             preparedStatement.setLong(1, userInfo.ID);
             preparedStatement.setString(2, bof);
-            preparedStatement.setString(3, bof);
-            preparedStatement.setLong(4, userInfo.ID);
+
+            if (preparedStatement.executeUpdate() <= 0){
+                sql = "UPDATE users SET userInfo = ?  WHERE id = ?;";
+                preparedStatement = conn.prepareStatement(sql);
+                preparedStatement.setString(1, bof);
+                preparedStatement.setLong(2, userInfo.ID);
+                System.out.println(preparedStatement.executeUpdate());
+            };
             System.out.println("записан " + userInfo.ID);
             return true;
         } catch (Exception e){
