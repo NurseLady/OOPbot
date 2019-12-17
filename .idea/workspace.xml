@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e77528e-a834-42c3-b4d5-71f11c68e6f0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bot/PostgreSQLConnector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bot/TgBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/TgBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bot/TgManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/TgManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bot/FileSystemConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bot/FileSystemConnector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bot/SQLiteConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bot/SQLiteConnector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bot/StringConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bot/StringConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bot/TgBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bot/TgBot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bot/TgManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bot/TgManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bot/commands/CheckAnswer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bot/commands/CheckAnswer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bot/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/UserManager.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,6 +34,11 @@
     <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="bot" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -74,6 +72,21 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@45c38e94" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -84,7 +97,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576478673775</updated>
-      <workItem from="1576478676634" duration="5608000" />
+      <workItem from="1576478676634" duration="7527000" />
+      <workItem from="1576510740422" duration="7432000" />
     </task>
     <servers />
   </component>
@@ -96,7 +110,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
