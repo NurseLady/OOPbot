@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e77528e-a834-42c3-b4d5-71f11c68e6f0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bot/PostgreSQLConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/PostgreSQLConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bot/SQLiteConnector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bot/UserManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bot/UserManager.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +105,7 @@
       <option name="presentableId" value="Default" />
       <updated>1576478673775</updated>
       <workItem from="1576478676634" duration="7527000" />
-      <workItem from="1576510740422" duration="12625000" />
+      <workItem from="1576510740422" duration="12934000" />
     </task>
     <servers />
   </component>

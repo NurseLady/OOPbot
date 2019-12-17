@@ -17,7 +17,8 @@ public class PostgreSQLConnector implements DataBaseConnector {
 
     static {
         try {
-            URI dbUri = new URI(System.getenv("DATABASE_URL"));
+            URI dbUri = new URI("postgres://nnuoqzkbzmracc:36087b0da242212766ae3bf97e71b27ae090ed7f4708291bb9944971120a10df@ec2-174-129-33-97.compute-1.amazonaws.com:5432/d34n0mjom3o767");
+
 
             String username = dbUri.getUserInfo().split(":")[0];
             String password = dbUri.getUserInfo().split(":")[1];
@@ -47,16 +48,17 @@ public class PostgreSQLConnector implements DataBaseConnector {
 
             String bof = Base64.getEncoder().encodeToString(byteArray);
 
-            String sql = "INSERT INTO users (id, userInfo) VALUES (?, ?);";
-            PreparedStatement preparedStatement = conn.prepareStatement(sql);
-            preparedStatement.setLong(1, userInfo.ID);
-            preparedStatement.setString(2, bof);
 
+            String sql = "UPDATE users SET userInfo = ?  WHERE id = ?;";
+            PreparedStatement preparedStatement = conn.prepareStatement(sql);
+            preparedStatement = conn.prepareStatement(sql);
+            preparedStatement.setString(1, bof);
+            preparedStatement.setLong(2, userInfo.ID);
             if (preparedStatement.executeUpdate() <= 0){
-                sql = "UPDATE users SET userInfo = ?  WHERE id = ?;";
+                sql = "INSERT INTO users (id, userInfo) VALUES (?, ?);";
                 preparedStatement = conn.prepareStatement(sql);
-                preparedStatement.setString(1, bof);
-                preparedStatement.setLong(2, userInfo.ID);
+                preparedStatement.setLong(1, userInfo.ID);
+                preparedStatement.setString(2, bof);
                 System.out.println(preparedStatement.executeUpdate());
             };
             System.out.println("записан " + userInfo.ID);
