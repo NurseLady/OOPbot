@@ -48,7 +48,7 @@ public class PostgreSQLConnector implements DataBaseConnector {
 
             String sql = "INSERT INTO users (id, userInfo) VALUES (?, ?)" +
                     "ON CONFLICT(id)" +
-                    "DO UPDATE SET userInfo = ?  WHERE id = ?";
+                    "DO UPDATE SET userInfo = ?  WHERE id = ?;";
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
             preparedStatement.setLong(1, userInfo.ID);
             preparedStatement.setString(2, bof);
@@ -67,7 +67,7 @@ public class PostgreSQLConnector implements DataBaseConnector {
     public UserInfo readUser(long userID) {
         UserInfo userInfo = null;
         try {
-            String sql = "SELECT userInfo FROM users WHERE id = ?";
+            String sql = "SELECT userInfo FROM users WHERE id = ?;";
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
             preparedStatement.setLong(1, userID);
 
