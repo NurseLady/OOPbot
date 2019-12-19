@@ -53,4 +53,4 @@ crashlytics-build.properties
 fabric.properties
 
 /target/
-/src/main/resources/
+#/src/main/resources/
