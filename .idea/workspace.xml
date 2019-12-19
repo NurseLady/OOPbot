@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3e77528e-a834-42c3-b4d5-71f11c68e6f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bot/FileSystemConnector.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bot/PostgreSQLConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/PostgreSQLConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bot/dataClasses/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/dataClasses/UserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bot/commands/CheckAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/commands/CheckAnswer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bot/commands/SendQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bot/commands/SendQuestion.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,8 +35,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -112,6 +111,7 @@
       <updated>1576478673775</updated>
       <workItem from="1576478676634" duration="7527000" />
       <workItem from="1576510740422" duration="16508000" />
+      <workItem from="1576777014045" duration="358000" />
     </task>
     <servers />
   </component>

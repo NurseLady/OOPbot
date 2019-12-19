@@ -13,7 +13,7 @@ public class SendQuestion extends Command {
     @Override
     public void exec(String message, UserInfo userInfo) {
         var question = GameManager.getGame(userInfo.gameKey).getQuestion();
-        userInfo.serviceCommandsInformation = String.valueOf(question.correctAnswerIndex);
+        userInfo.rightAnswer = String.valueOf(question.correctAnswerIndex);
 
         var keyboardButtons = new HashMap<String, String>();
         var i = 0;

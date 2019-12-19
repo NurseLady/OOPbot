@@ -13,7 +13,7 @@ public class CheckAnswer extends Command {
 
     @Override
     public void exec(String message, UserInfo userInfo) {
-        if (GameManager.getGame(userInfo.gameKey).checkUserAnswer(message, Integer.parseInt(userInfo.serviceCommandsInformation))){
+        if (GameManager.getGame(userInfo.gameKey).checkUserAnswer(message, Integer.parseInt(userInfo.rightAnswer))){
             userInfo.score += 2;
             manager.sendPhoto(new File("photos" + StringConstants.separator + "truth.png"), userInfo.ID);
             manager.sendMessage(StringConstants.correctAnswerMessage, userInfo.ID);
