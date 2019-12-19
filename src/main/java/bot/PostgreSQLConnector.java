@@ -17,8 +17,7 @@ public class PostgreSQLConnector implements DataBaseConnector {
 
     static {
         try {
-            URI dbUri = new URI("postgres://nnuoqzkbzmracc:36087b0da242212766ae3bf97e71b27ae090ed7f4708291bb9944971120a10df@ec2-174-129-33-97.compute-1.amazonaws.com:5432/d34n0mjom3o767");
-
+            URI dbUri = new URI(System.getenv("DATABASE_URL"));
 
             String username = dbUri.getUserInfo().split(":")[0];
             String password = dbUri.getUserInfo().split(":")[1];
